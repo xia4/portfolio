@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image⁄x-icon" href="./asset/img/coding.png">
     <link rel="stylesheet" type="text/css" href ="asset/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.0/css/all.min.css">
@@ -17,10 +18,21 @@
         <script type="text/javascript" src="asset/js/jquery.nicescroll.js"></script>
         <script type="text/javascript" src="asset/js/jquery.easypiechart.js"></script>
         <script type="text/javascript" src="asset/js/isotope.pkgd.min.js"></script>
-        
-    <title>이현준 | 웹 포트폴리오</title>
-</head>
-<body>
+        <title>이현준 | 웹 포트폴리오</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="asset/js/scrollbar.js"></script>
+        <script type="text/javascript">
+    $(function() {
+        $("body").prognroll({
+            height: 5,
+            color: "#555"
+        });
+        $(".content").prognroll({
+            custom: true
+        });
+    });
+</script>
     <div class="preloader" id="preloader">
         <div class="item">
               <img src="asset/img/loading.gif">
@@ -49,6 +61,7 @@
             <i class="fa-solid fa-xmark"></i>
         </div>
     </nav>
+    
     <header>
         <div class="inner">
             <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
@@ -79,7 +92,7 @@
             </div>
             <div class="scroll_down">
                 <a href="#about" class="animated bounce">
-                    <i class="fa-regular fa-down"></i>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </a>
                 <span>Scroll Down</span>
             </div>
@@ -430,37 +443,9 @@
     </section>
 
     <footer>
-        <div class="cnt_inner">
-            <a href="javascript:;" class="btnTop">
-                <span class="blind">top</span>
-                <canvas id="canvas" width="40" height="40"></canvas>
-            </a>
-            Thanks for visiting my Website.<br>
-            Copyright ⓒ 2020. Sujin Choi All rights reserved.
-        </div>
     </footer>
 
-    <script>
-        $(function(){
-            var canvas = document.getElementById("canvas");
-            var ctx = canvas.getContext("2d");
-            var end = 0;
-            function drawScreen(end){
-                ctx.clearRect(0,0,40,40);
-                ctx.beginPath();
-                ctx.strokeStyle = "#355070";
-                ctx.lineWidth =2;
-                ctx.arc(20,20,19,(Math.PI/180)*(0-90), (Math.PI/180)*(end-90), false);
-                ctx.stroke();
-                ctx.closePath();
-            }
-            drawScreen();
-            $(window).on("scroll", function(){
-                end = $(window).scrollTop() * 360 / ($(document).height() - $(window).height());
-                drawScreen(end);
-            });
-        });
-    </script>
+    
     <script type="text/javascript" src="./asset/js/navi.js"></script>
 </body>
 </html>
