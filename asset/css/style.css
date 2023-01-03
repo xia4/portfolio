@@ -50,24 +50,23 @@ table {
     border-spacing: 0;
 }
 header {
-    width: 1024px;
-    height: 60px;
+    width: 100%;
+    height: 70px;
     position: fixed;
     z-index: 1;
     top: 20px;
-    left: 50%;
-    margin-left: -512px;
+    /* left: 50%;
+    margin-left: -512px; */
     padding: 0px 0;
     box-sizing: border-box;
-    border-bottom: 1px solid #404040;
-    background: rgb(64 64 64 / 58%);
     transition: all 0.4s;
     font: 20px 'Source Sans Pro',sans-serif;
-    border-radius: 1.8rem;
 }
 header .inner {
     position: relative;
-    width: 1024px;
+    background: rgb(64 64 64 / 58%);
+    border-radius: 1.8rem;
+    width: 1200px;
     margin: 0 auto;
     height: 100%;
     display: table;
@@ -96,9 +95,6 @@ header .nav li {
     position: relative;
     padding: 16px 20px;
     height: 100%;
-}
-header .nav li:hover { 
-    cursor:pointer; 
 }
 header .nav li:hover a { 
     color:#fff; 
@@ -179,6 +175,7 @@ nav a:hover:before, nav a:hover:after {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    
     left: 0;
     opacity: 0;
     position: fixed;
@@ -187,13 +184,14 @@ nav a:hover:before, nav a:hover:after {
 }
 #home {
     padding: 0;
-    background-image: url(../img/home.png);
+    background-image: url(../img/home.jpg);
     background-size: cover;
     width: 100%;
     background-attachment: fixed;
     min-height: 550px;
     position: relative;
     z-index: 0;
+    filter: grayscale(100%);
     height: 100vh;
     background-position: 50% 0px;
     display: table;
@@ -205,7 +203,7 @@ nav a:hover:before, nav a:hover:after {
     text-align: center;
 }
 #home .inner .type-wrap span {
-    font: 40px 'ESans' ,sans-serif;
+    font: 45px 'ESans' ,sans-serif;
     color: #fff;
     font-weight: 500;
 }
@@ -244,7 +242,7 @@ nav a:hover:before, nav a:hover:after {
     line-height: 60px;
     display: inline-block;
     color: #fff;
-    font-size: 12px;
+    font-size:21px;
 }
 .scroll_down span {
     color: rgb(204, 204, 204);
@@ -293,7 +291,6 @@ nav a:hover:before, nav a:hover:after {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.348);
   text-align: center;
   align-items: center;
-  cursor: pointer;
   transition: all 0.5s;
   /*깜빡거리는 커서 없앰*/
   -webkit-touch-callout: none; /* iOS Safari */
@@ -339,7 +336,7 @@ nav a:hover:before, nav a:hover:after {
   width: 50px;
   height: 50px;
   transition: all .5s;
-}
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
 .fixed_navi ul li:hover {
     opacity: 1;
 }
