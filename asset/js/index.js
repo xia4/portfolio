@@ -173,7 +173,7 @@ $(document).ready(function(){
     btnTop();
 
     new Typed('.typed', {
-        strings: ["Web Developer Portfolio :)"],
+        strings: ["Web Publisher Portfolio :)"],
         typeSpeed: 70,
         // backSpeed: 80,
         // loop: true,
