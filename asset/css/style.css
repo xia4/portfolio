@@ -50,23 +50,30 @@ table {
     border-spacing: 0;
 }
 header {
-    width: 100%;
+    width: 1024px;
     height: 70px;
     position: fixed;
     z-index: 1;
     top: 20px;
-    /* left: 50%;
-    margin-left: -512px; */
+    left: 50%;
+    margin-left: -512px;
     padding: 0px 0;
     box-sizing: border-box;
     transition: all 0.4s;
     font: 20px 'Source Sans Pro',sans-serif;
+    background: rgb(64 64 64 / 58%);
+    border-radius: 1.8rem;
+}
+header.top {
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+  left: 0;
+  top: 0;
 }
 header .inner {
     position: relative;
-    background: rgb(64 64 64 / 58%);
-    border-radius: 1.8rem;
-    width: 1200px;
+    width: 1024px;
     margin: 0 auto;
     height: 100%;
     display: table;
@@ -466,3 +473,61 @@ nav a:hover:before, nav a:hover:after {
   display: block;
   transition: all 0.6s;
 }
+#about {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+  padding: 120px 0;
+}
+.about_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about_inner h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  color: #212529;
+  font-weight: 700;
+  font-family: 'ESans', sans-serif;
+  margin-bottom: 70px;
+}
+.about_inner .about_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.about_inner .profile {
+  position: relative;
+  font-size: 38px;
+  z-index: 1;
+}
+.about_inner .profile .profile_photo {
+  position: relative;
+  width: 413px;
+  height: 500px;
+  background-image: url(../img/FLD16122.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: 30px;
+}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+.profile_nickname {
+  display: inline-block;
+  font-family: "Montserrat", AppleGothic, sans-serif, Helvetica;
+  font-weight: 700;
+}
+.profile_name {
+  display: inline-block;
+  font-size: 45%;
+  margin-left: 0.3em;
+  color: #747474;
+}
+
