@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href ="asset/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script type="text/javascript" src="asset/js/jquery-2.2.3.min.js"></script>
         <script type="text/javascript" src="asset/js/html5shiv.js"></script>
         <script type="text/javascript" src="asset/js/html5div.js"></script>
@@ -18,6 +23,10 @@
         <script type="text/javascript" src="asset/js/jquery.nicescroll.js"></script>
         <script type="text/javascript" src="asset/js/jquery.easypiechart.js"></script>
         <script type="text/javascript" src="asset/js/isotope.pkgd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script type="text/javascript" src="./asset/js/counterup.js"></script>
+        <script type="text/javascript" src="./asset/js/waypoints.min.js"></script>
+       
         <title>이현준 | 웹 포트폴리오</title>
     </head>
     <body>
@@ -79,7 +88,7 @@
                 <span class="typed"></span>
             </div>
             <div class="scroll_down">
-                <a href="#about" class="animated bounce">
+                <a href="#about" data-scroll="about"  class="animated bounce">
                     <i class="fa-solid fa-chevron-down"></i>
                 </a>
                 <span>Scroll Down</span>
@@ -89,15 +98,17 @@
 
     <section id="about">
         <div class="about_inner">
-            <h2>About</h2>
+                <h2 class="loading">
+                    <span class="skills-num counter">90</span><span class="small">%</span>
+                    <span>B</span>
+                    <span>O</span>
+                    <span>U</span>
+                    <span>T</span>
+                </h2>
             <div class="about_wrap">
                 <div class="profile">
                     <div class="profile_photo">
                         <span class="blind">프로필 사진</span>
-                    </div>
-                    <div class="profile_info">
-                        <p class="profile_nickname">Xia</p>
-                        <p class="profile_name">@이현준</p>
                     </div>
                 </div>
                 <div class="about_box">
@@ -109,10 +120,68 @@
                         <br>
                         좋아하는 일을 위해 정체되어있지 않고 <br>
                         더 발전하기 위해 항상 노력하고자 합니다.<br>
-                        웹표준 및 웹접근성 퍼블리셔입니다.<br>
                         'Semantic Markup'을 할수 있으며, <br>
                         최신 기술을 알기위해 끊임없이 공부중입니다.
                     </h3>
+                    
+                </div>
+                
+                <div class="profile_third">
+                    <div class="profile_des m-b">
+                        <h2><i class="fas fa-user"></i>Profile</h2>
+                        <table>
+                            <tbody><tr>
+                              <td><span class="profile_txt">이름</span></td>
+                              <td>Lee Hyun Jun / 이현준</td>
+                            </tr>
+                            <tr>
+                              <td><span class="profile_txt">생년월일</span></td>
+                              <td>1997.09.08</td>
+                            </tr>
+                            <tr>
+                              <td><span class="profile_txt">지역</span></td>
+                              <td>서울 강동구 명일동</td>
+                            </tr>
+                          </tbody></table>
+                    </div>
+                    <div class="profile_history m-b">
+                        <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
+                        <table>
+                            <tbody><tr>
+                              <td><span class="profile_txt">2021.08</span></td>
+                              <td>비전대 건축과 졸업</td>
+                            </tr>
+                            <tr>
+                              <td><span class="profile_txt">2021.10 </span></td>
+                              <td>위코드 오프라인 코딩 과정 </td>
+                            </tr>
+                            <tr>
+                              <td><span class="profile_txt">2021.10 </span></td>
+                              <td>제누이오 인턴</td>
+                            </tr>
+                            <tr>
+                              <td><span class="profile_txt">2022.12 </span></td>
+                              <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 ) </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="profile_contect">
+                        <h2><i class="fas fa-award"></i>Contect</h2>
+                        <table>
+                            <tbody><tr>
+                              <td>
+                                <span class="profile_txt">Tel</span>
+                              </td>
+                              <td>010-8286-2797</td>
+                            </tr>
+                            <tr>
+                              <td><span class="profile_txt">Email</span></td>
+                              <td>guswns1411@gmail.com</td>
+                            </tr>
+        
+                          </tbody></table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,296 +189,106 @@
 
     <section id="skills">
         <div class="cnt_inner">
-            <h2>Skills</h2>
-            <p class="border">✱</p>
-            <ul class="skill">
-                <li class="skill1">
-                    <span class="chart" data-percent="95">
-                        <span class="percent">95</span>
-                    </span>
-                    <span class="txt">HTML</span>
-                </li>
-                <li class="skill2">
-                    <span class="chart" data-percent="95">
-                        <span class="percent">95</span>
-                    </span>
-                    <span class="txt">CSS</span>
-                </li>
-                <li class="skill3">
-                    <span class="chart" data-percent="85">
-                        <span class="percent">85</span>
-                    </span>
-                    <span class="txt">Javascript & jQuery</span>
-                </li>
-                <li class="skill4">
-                    <span class="chart" data-percent="75">
-                        <span class="percent">75</span>
-                    </span>
-                    <span class="txt">PHOTOSHOP</span>
-                </li>
-            </ul>
+            <h2 class="loading">
+                <span>S</span>
+                <span>K</span>
+                <span>I</span>
+                <span>L</span>
+                <span>L</span>
+                <span>S</span>
+            </h2>
+            <div class="skill_bg">
+                <ul class="skill">
+                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="300">
+                        <img src="./asset/img/HTML5_logo.png" alt="">
+                        <div class="s-c"><span class="count-num" id="text1"></span><span class="count-unit">%</span></div>
+                                        </li>
+                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="600">
+                        <img src="./asset/img/css3_logo.png" alt="">
+                        <div class="s-c"><span class="count-num" id="text2"></span><span class="count-unit">%</span></div>
+                    </li>
+                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="900">
+                        <img src="./asset/img/js_logo.png" alt="">
+                        <div class="s-c"><span class="count-num" id="text3"></span><span class="count-unit">%</span></div>
+                    </li>
+                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="1200">
+                        <img src="./asset/img/jQuery_logo.png" alt="">
+                        <div class="s-c"><span class="count-num" id="text4"></span><span class="count-unit">%</span></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="skill_bg">
+                <ul class="skill">
+                    <li class="skill_logo">
+                        <img src="./asset/img/excel.png" alt="">
+
+                    </li>
+                    <li class="skill_logo">
+                        <img src="./asset/img/powerpoint.png" alt="">
+                    </li>
+                    <li class="skill_logo">
+                        <img src="./asset/img/word.png" alt="">
+                    </li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                
+     
+                function numberCounter(target_frame, target_number) {
+                    this.count = 0; this.diff = 0;
+                    this.target_count = parseInt(target_number);
+                    this.target_frame = document.getElementById(target_frame);
+                    this.timer = null;
+                    this.counter();
+                };
+                    numberCounter.prototype.counter = function() {
+                        var self = this;
+                        this.diff = this.target_count - this.count;
+                     
+                        if(this.diff > 0) {
+                            self.count += Math.ceil(this.diff / 10);
+                        }
+                     
+                        this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                     
+                        if(this.count < this.target_count) {
+                            this.timer = setTimeout(function() { self.counter(); }, 100);
+                        } else {
+                            clearTimeout(this.timer);
+                        }
+                    };
+                     
+                $(window).scroll(function(){
+                  if($(window).scrollTop() > 1100){
+                    new numberCounter("text1", 85);
+                    new numberCounter("text2", 80);
+                    new numberCounter("text3", 60);
+                    new numberCounter("text4", 60);
+                         
+                  }
+                });
+                     
+                </script>
         </div>
     </section>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
     <section id="portfolio">
         <div class="cnt_inner">
-            <h2>Portfolio</h2>
-            <p class="border">✱</p>
-            <div class="pf_btn">
-                <button class="btn on" data-filter="*">all</button>
-                <button class="btn" data-filter=".pc">pc</button>
-                <button class="btn" data-filter=".mobile">mobile</button>
-                <button class="btn" data-filter=".responsive">responsive</button>
-              </div>
-              <div class="grid">
-                <div class="list responsive" data-category="responsive">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_pf.png" alt="PORTFOLIO">
-                        </div>
-                        <div class="caption">
-                            <h3>PORTFOLIO</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 4일</p>
-                            <a href="javascript:void(0)">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>PORTFOLIO</h3>
-                </div>
-                <div class="list responsive" data-category="responsive">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_cari.png" alt="차 종합연구원">
-                        </div>
-                        <div class="caption">
-                            <h3>차 종합연구원</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 10일</p>
-                            <a href="http://cari.chamc.co.kr/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>차 종합연구원</h3>
-                </div>
-                <div class="list mobile" data-category="mobile">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_bw_m.png" alt="분당차여성병원 Mobile">
-                        </div>
-                        <div class="caption">
-                            <h3>분당차여성병원 Mobile</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 두달</p>
-                            <a href="https://bundangwoman.m.chamc.co.kr:453/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>분당차여성병원 Mobile</h3>
-                </div>
-                <div class="list mobile" data-category="mobile">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_gw_m.png" alt="차 여성의학연구소 강남 MOBILE">
-                        </div>
-                        <div class="caption">
-                            <h3>차 여성의학연구소 강남 MOBILE 메인</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 4일</p>
-                            <a href="https://chaimc.m.chamc.co.kr:447/Default.cha" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>차 여성의학연구소 강남 mobile</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_gw_pc.png" alt="차 여성의학연구소 강남 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>차 여성의학연구소 강남 PC 메인</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 8일</p>
-                            <a href="https://chaimc.chamc.co.kr/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>차 여성의학연구소 강남 PC</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_ilsan_pc.png" alt="일산차병원 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>일산차병원 PC</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 두달</p>
-                            <a href="https://ilsan.chamc.co.kr/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>일산차병원 PC</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_qfitter.png" alt="큐피터 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>Q-fitter PC</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 2주</p>
-                            <a href="https://matching.qfitter.com:467/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>Q-fitter PC</h3>
-                </div>
-                <div class="list responsive" data-category="responsive">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_ilsan_t.png" alt="일산차병원 티저">
-                        </div>
-                        <div class="caption">
-                            <h3>일산차병원 티저</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 6일</p>
-                            <a href="project_05_ilsanT/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>일산차병원 티저</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_ivf_pc.png" alt="차 여성의학연구소 분당 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>차 여성의학연구소 분당 PC</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 두달</p>
-                            <a href="https://ivf.chamc.co.kr/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>차 여성의학연구소 분당 PC</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_chatheshop_pc.png" alt="Cha the Shop PC">
-                        </div>
-                        <div class="caption">
-                            <h3>Cha the Shop PC</h3>
-                            <p>카페24 퍼블리싱 100%<br>작업기간 : 2주</p>
-                            <a href="https://www.chatheshop.com/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>Cha the Shop PC</h3>
-                </div>
-                <div class="list mobile" data-category="mobile">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_chatheshop_m.png" alt="Cha the Shop MOBILE">
-                        </div>
-                        <div class="caption">
-                            <h3>Cha the Shop MOBILE</h3>
-                            <p>카페24 퍼블리싱 100%<br>작업기간 : 2주</p>
-                            <a href="https://m.chatheshop.com/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>Cha the Shop MOBILE</h3>
-                </div>
-                <div class="list responsive" data-category="responsive">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_chahealth.png" alt="차움 건진센터 삼성분원">
-                        </div>
-                        <div class="caption">
-                            <h3>차움 건진센터 삼성분원</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 두달</p>
-                            <a href="https://gangnam.chahealth.co.kr:446/Default.cha" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>차움 건진센터 삼성분원</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_cha_refer.png" alt="분당차병원 진료협력센터">
-                        </div>
-                        <div class="caption">
-                            <h3>분당차병원 진료협력센터</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 한달</p>
-                            <a href="https://refer.chamc.co.kr/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>분당차병원 진료협력센터</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_bari.png" alt="바리푸드">
-                        </div>
-                        <div class="caption">
-                            <h3>바리푸드</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 3주</p>
-                            <a href="project_04_bari/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>바리푸드</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_hygge_pc.png" alt="휘게문고 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>휘게몰 PC</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 3주</p>
-                            <a href="project_02_hyggemall/pc/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>휘게몰 PC</h3>
-                </div>
-                <div class="list mobile" data-category="mobile">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_hygge_m.png" alt="휘게문고 MOBILE">
-                        </div>
-                        <div class="caption">
-                            <h3>휘게몰 MOBILE</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 3주</p>
-                            <a href="project_02_hyggemall/mobile/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>휘게몰 MOBILE</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_hyggebooks.png" alt="휘게북스 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>휘게북스 PC</h3>
-                            <p>퍼블리싱 100%<br>작업기간 : 1주</p>
-                            <a href="project_03_hyggebook/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>휘게북스 PC</h3>
-                </div>
-                <div class="list pc" data-category="pc">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_eznbiz.png" alt="이지앤비즈 PC">
-                        </div>
-                        <div class="caption">
-                            <h3>이지앤비즈 PC</h3>
-                            <p>디자인&퍼블리싱 100%<br>작업기간 : 두달</p>
-                            <a href="https://www.eznbiz.co.kr/" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>이지앤비즈 PC</h3>
-                </div>
-                <div class="list responsive" data-category="responsive">
-                    <div class="pf_cnt">
-                        <div class="cnt">
-                            <img src="asset/img/pf_agados.png" alt="아가도스">
-                        </div>
-                        <div class="caption">
-                            <h3>아가도스</h3>
-                            <p>디자인&퍼블리싱 100%<br>작업기간 : 두달</p>
-                            <a href="http://www.agadoss.com/ko-kr/index.html" target="_blank">Go Site</a>
-                        </div>
-                    </div>
-                    <h3>아가도스</h3>
-                </div>
-            </div>
+            <h2 class="loading">
+                <span>D</span>
+                <span>I</span>
+                <span>R</span>
+                <span>E</span>
+                <span>C</span>
+                <span>T</span>
+                <span>I</span>
+                <span>O</span>
+                <span>N</span>
+            </h2>
+            
         </div>
     </section>
 
