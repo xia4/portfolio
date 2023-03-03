@@ -84,7 +84,7 @@ function onScroll() {
 function skillsChart(){
     var abTop = $('#about').offset().top;
     var skTop = $('#skills').offset().top;
-    var pfTop = $('#portfolio').offset().top;
+    var pfTop = $('#direction').offset().top;
     var scroll = document.documentElement.scrollTop;
     $("#skills")[scroll > skTop-500 ? 'addClass' : 'removeClass']('on');
 
@@ -103,20 +103,6 @@ function skillsChart(){
         });
     }
 
-    /*$('.skill > li').each( function(i){
-        var delay = 1000;
-        var count = $(".skill > li ").length;
-        for(i=1; i<count; i++){
-            delay = delay  + (i*40);
-            // delayi = delay  + (i*100);
-            if( scroll > pfTop - 500  ){
-                $(this).stop().animate({
-                    'top':'0px',
-                    'opacity':'1'
-                },delay);
-            }
-        };
-    });*/
 }
 
 function portfolioGrid(){
