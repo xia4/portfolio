@@ -14,8 +14,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script type="text/javascript" src="asset/js/jquery-2.2.3.min.js"></script>
-        <script type="text/javascript" src="asset/js/html5shiv.js"></script>
-        <script type="text/javascript" src="asset/js/html5div.js"></script>
         <script type="text/javascript" src="asset/js/typed.min.js"></script>
         <script type="text/javascript" src="asset/js/index.js"></script>
         <script type="text/javascript" src="asset/js/jquery.easing.1.3.js"></script>
@@ -24,17 +22,17 @@
         <script type="text/javascript" src="asset/js/jquery.easypiechart.js"></script>
         <script type="text/javascript" src="asset/js/isotope.pkgd.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script type="text/javascript" src="./asset/js/counterup.js"></script>
-        <script type="text/javascript" src="./asset/js/waypoints.min.js"></script>
-       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script src="./asset/js/jquery.counterup.min.js"></script>
+        <script src="./asset/js/jquery.counterup.js"></script>
         <title>이현준 | 웹 포트폴리오</title>
     </head>
     <body>
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
         <div class="item">
               <img src="asset/img/loading.gif">
           </div>
-    </div>
+    </div> -->
     
     <nav class="fixed_navi">
         <ul>
@@ -62,25 +60,20 @@
     <header>
         <div class="inner">
             <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
-            <!-- <button class="nav_toggle">
-                <div class="nav_icon">
-                    <span></span><span></span><span></span>
-                </div>
-            </button> -->
             <nav class="header_nav">
                 <ul class="nav">
                     <li><a data-parent="#home" data-scroll="home">home</a></li>
                     <li><a data-parent="#about" data-scroll="about">about</a></li>
                     <li><a data-parent="#skills" data-scroll="skills">skills</a></li>
-                    <li><a data-parent="#portfolio" data-scroll="portfolio">direction</a></li>
+                    <li><a data-parent="#direction" data-scroll="direction">direction</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div id="wrapper">
+    <!-- <div id="wrapper">
         <div id="overlay"></div>
-    </div>
+    </div> -->
 
     <section id="home">
         <div class="inner">
@@ -113,7 +106,7 @@
                 </div>
                 <div class="about_box">
                     <h3 class="about_text">
-                        안녕하세요 저는 1년차 웹 퍼블리셔 이현준입니다.<br>
+                        저는 신입 웹 퍼블리셔 이현준입니다.<br>
                         사용자에게 필요한 기능을 개발 및 적용 시키고,<br>
                         아름다운 인터페이스와 애니메이션을 구현하는 것을<br>
                         좋아해서 웹 퍼블리셔를 선택하게 되었습니다.<br>
@@ -149,11 +142,11 @@
                         <table>
                             <tbody><tr>
                               <td><span class="profile_txt">2021.08</span></td>
-                              <td>비전대 건축과 졸업</td>
+                              <td>비전대학교 건축과 졸업</td>
                             </tr>
                             <tr>
                               <td><span class="profile_txt">2021.10 </span></td>
-                              <td>위코드 오프라인 코딩 과정 </td>
+                              <td>위코드 오프라인 코딩 과정 이수</td>
                             </tr>
                             <tr>
                               <td><span class="profile_txt">2021.10 </span></td>
@@ -197,77 +190,37 @@
                 <span>L</span>
                 <span>S</span>
             </h2>
+            <p class="sub_text">* 이미지를 호버해보세요 *</p>
             <div class="skill_bg">
                 <ul class="skill">
-                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="300">
-                        <img src="./asset/img/HTML5_logo.png" alt="">
-                        <div class="s-c"><span class="count-num" id="text1"></span><span class="count-unit">%</span></div>
-                                        </li>
-                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="600">
-                        <img src="./asset/img/css3_logo.png" alt="">
-                        <div class="s-c"><span class="count-num" id="text2"></span><span class="count-unit">%</span></div>
+                    <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
+                        <img src="./asset/img/HTML5_logo.png" alt="" class="skill_img">
+                        <span class="skill_tip">웹 표준과 웹 접근성을 준수하는
+                            HTML 구조설계로 시맨틱 태그를 사용하여 마크업을 작성합니다.
+                            </span>
                     </li>
-                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="900">
-                        <img src="./asset/img/js_logo.png" alt="">
-                        <div class="s-c"><span class="count-num" id="text3"></span><span class="count-unit">%</span></div>
+                    <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="./asset/img/css3_logo.png" alt="" class="skill_img skill_right">
+                            <span class="skill_tip tip_right">CSS를 통해 시안에 따른 디자인을 구현하고
+                                미디어 쿼리를 통해 반응형 웹제작이 가능합니다.</span>
                     </li>
-                    <li class="skill_logo"  data-aos="zoom-in" data-aos-delay="1200">
-                        <img src="./asset/img/jQuery_logo.png" alt="">
-                        <div class="s-c"><span class="count-num" id="text4"></span><span class="count-unit">%</span></div>
+                        <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="./asset/img/js_logo.png" alt="" class="skill_img">
+                            <span class="skill_tip">필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와 병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄 압니다.</span>
                     </li>
-                </ul>
-            </div>
-            <div class="skill_bg">
-                <ul class="skill">
-                    <li class="skill_logo">
-                        <img src="./asset/img/excel.png" alt="">
-
-                    </li>
-                    <li class="skill_logo">
-                        <img src="./asset/img/powerpoint.png" alt="">
-                    </li>
-                    <li class="skill_logo">
-                        <img src="./asset/img/word.png" alt="">
+                        <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="./asset/img/jQuery_logo.png" alt="" class="skill_img skill_right">
+                            <span class="skill_tip tip_right">제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이 가능합니다.</span>
                     </li>
                 </ul>
             </div>
             <script type="text/javascript">
                 
      
-                function numberCounter(target_frame, target_number) {
-                    this.count = 0; this.diff = 0;
-                    this.target_count = parseInt(target_number);
-                    this.target_frame = document.getElementById(target_frame);
-                    this.timer = null;
-                    this.counter();
-                };
-                    numberCounter.prototype.counter = function() {
-                        var self = this;
-                        this.diff = this.target_count - this.count;
-                     
-                        if(this.diff > 0) {
-                            self.count += Math.ceil(this.diff / 10);
-                        }
-                     
-                        this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                     
-                        if(this.count < this.target_count) {
-                            this.timer = setTimeout(function() { self.counter(); }, 100);
-                        } else {
-                            clearTimeout(this.timer);
-                        }
-                    };
-                     
-                $(window).scroll(function(){
-                  if($(window).scrollTop() > 1100){
-                    new numberCounter("text1", 85);
-                    new numberCounter("text2", 80);
-                    new numberCounter("text3", 60);
-                    new numberCounter("text4", 60);
-                         
-                  }
-                });
-                     
+                $('.counter').counterUp({
+    delay: 10,
+    time: 1000
+});
                 </script>
         </div>
     </section>
@@ -275,7 +228,7 @@
     <script>
         AOS.init();
       </script>
-    <section id="portfolio">
+    <section id="direction">
         <div class="cnt_inner">
             <h2 class="loading">
                 <span>D</span>
@@ -288,7 +241,10 @@
                 <span>O</span>
                 <span>N</span>
             </h2>
-            
+            <div class="bg">
+                <span class="ba11"></span>
+                <span class="ba12"></span>
+            </div>
         </div>
     </section>
 
