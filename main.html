@@ -1,257 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image⁄x-icon" href="./asset/img/coding.png">
-    <link rel="stylesheet" type="text/css" href ="asset/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-        <script type="text/javascript" src="asset/js/jquery-2.2.3.min.js"></script>
-        <script type="text/javascript" src="asset/js/typed.min.js"></script>
-        <script type="text/javascript" src="asset/js/index.js"></script>
-        <script type="text/javascript" src="asset/js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="asset/js/TweenMax.min.js"></script>
-        <script type="text/javascript" src="asset/js/jquery.nicescroll.js"></script>
-        <script type="text/javascript" src="asset/js/jquery.easypiechart.js"></script>
-        <script type="text/javascript" src="asset/js/isotope.pkgd.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-        <script src="./asset/js/jquery.counterup.min.js"></script>
-        <script src="./asset/js/jquery.counterup.js"></script>
-        <title>이현준 | 웹 포트폴리오</title>
-    </head>
-    <body>
-    <!-- <div class="preloader" id="preloader">
-        <div class="item">
-              <img src="asset/img/loading.gif">
-          </div>
-    </div> -->
-    
-    <nav class="fixed_navi">
-        <ul>
-            <li class="showNavi1">
-                <a href="#home"><i class="fa-solid fa-house"></i></a>
-            </li>
-            <li class="showNavi2">
-                <a href="#about"><i class="fa-solid fa-address-card"></i></a>
-            </li>
-            <li class="showNavi3">
-                <a href="#skills"><i class="fa-solid fa-star"></i></a>
-            </li>
-            <li class="showNavi4">
-                <a href="#direction"><i class="fa-solid fa-diamond-turn-right"></i></a>
-            </li>
-        </ul>
-        <div class="menu_button">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="close_button">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-    </nav>
-    
-    <header>
-        <div class="inner">
-            <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
-            <nav class="header_nav">
-                <ul class="nav">
-                    <li><a data-parent="#home" data-scroll="home">home</a></li>
-                    <li><a data-parent="#about" data-scroll="about">about</a></li>
-                    <li><a data-parent="#skills" data-scroll="skills">skills</a></li>
-                    <li><a data-parent="#direction" data-scroll="direction">direction</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image⁄x-icon" href="./asset/img/coding.png"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://kit.fontawesome.com/30bcb6c21d.css" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/aos.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="text/javascript" src="./asset/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="./asset/js/typed.min.js"></script>
+    <script type="text/javascript" src="./asset/js/index.js"></script>
+    <script type="text/javascript" src="./asset/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="./asset/js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="./asset/js/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="./asset/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="./asset/js/fontawesome.js" crossorigin="anonymous"></script>
+    <title>이현준 | 웹 포트폴리오</title>
+  </head>
+  <body>
+    <div class="preloader" id="preloader">
+      <div class="item">
+        <img src="./asset/img/loadingImg.gif" alt="" />
+      </div>
+    </div>
 
-    <!-- <div id="wrapper">
-        <div id="overlay"></div>
-    </div> -->
-
-    <section id="home">
+    <div id="wrap">
+      <header>
         <div class="inner">
+          <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
+          <nav class="header_nav">
+            <ul class="nav">
+              <li><a data-parent="#home" data-scroll="home">home</a></li>
+              <li><a data-parent="#about" data-scroll="about">about</a></li>
+              <li><a data-parent="#skills" data-scroll="skills">skills</a></li>
+              <li><a data-parent="#direction" data-scroll="direction">direction</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="home" class="section">
+          <div class="inner">
             <div class="type-wrap">
-                <span class="typed"></span>
+              <span class="typed"></span>
             </div>
             <div class="scroll_down">
-                <a href="#about" data-scroll="about"  class="animated bounce">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <span>Scroll Down</span>
+              <a href="#about" data-scroll="about" class="animated bounce">
+                <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <span>Scroll Down</span>
             </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="about_inner">
-                <h2 class="loading">
-                    <span>A</span>
-                    <span>B</span>
-                    <span>O</span>
-                    <span>U</span>
-                    <span>T</span>
-                </h2>
-            <div class="about_wrap">
-                <div class="profile">
-                    <div class="profile_photo">
-                        <span class="blind">프로필 사진</span>
-                    </div>
-                </div>
-                <div class="about_box">
-                    <h3 class="about_text">
-                        저는 신입 웹 퍼블리셔 이현준입니다.<br>
-                        사용자에게 필요한 기능을 개발 및 적용 시키고,<br>
-                        아름다운 인터페이스와 애니메이션을 구현하는 것을<br>
-                        좋아해서 웹 퍼블리셔를 선택하게 되었습니다.<br>
-                        <br>
-                        좋아하는 일을 위해 정체되어있지 않고 <br>
-                        더 발전하기 위해 항상 노력하고자 합니다.<br>
-                        'Semantic Markup'을 할수 있으며, <br>
-                        최신 기술을 알기위해 끊임없이 공부중입니다.
-                    </h3>
-                    
-                </div>
-                
-                <div class="profile_third">
-                    <div class="profile_des m-b">
-                        <h2><i class="fas fa-user"></i>Profile</h2>
-                        <table>
-                            <tbody><tr>
-                              <td><span class="profile_txt">이름</span></td>
-                              <td>Lee Hyun Jun / 이현준</td>
-                            </tr>
-                            <tr>
-                              <td><span class="profile_txt">생년월일</span></td>
-                              <td>1997.09.08</td>
-                            </tr>
-                            <tr>
-                              <td><span class="profile_txt">지역</span></td>
-                              <td>서울 강동구 명일동</td>
-                            </tr>
-                          </tbody></table>
-                    </div>
-                    <div class="profile_history m-b">
-                        <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
-                        <table>
-                            <tbody><tr>
-                              <td><span class="profile_txt">2021.08</span></td>
-                              <td>비전대학교 건축과 졸업</td>
-                            </tr>
-                            <tr>
-                              <td><span class="profile_txt">2021.10 </span></td>
-                              <td>위코드 오프라인 코딩 과정 이수</td>
-                            </tr>
-                            <tr>
-                              <td><span class="profile_txt">2021.10 </span></td>
-                              <td>제누이오 인턴</td>
-                            </tr>
-                            <tr>
-                              <td><span class="profile_txt">2022.12 </span></td>
-                              <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 ) </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                    <div class="profile_contect">
-                        <h2><i class="fas fa-award"></i>Contect</h2>
-                        <table>
-                            <tbody><tr>
-                              <td>
-                                <span class="profile_txt">Tel</span>
-                              </td>
-                              <td>010-8286-2797</td>
-                            </tr>
-                            <tr>
-                              <td><span class="profile_txt">Email</span></td>
-                              <td>guswns1411@gmail.com</td>
-                            </tr>
-        
-                          </tbody></table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="cnt_inner">
+          </div>
+        </section>
+        <section id="about" class="section">
+          <div class="port_inner">
             <h2 class="loading">
-                <span>S</span>
-                <span>K</span>
-                <span>I</span>
-                <span>L</span>
-                <span>L</span>
-                <span>S</span>
+              <span>A</span>
+              <span>B</span>
+              <span>O</span>
+              <span>U</span>
+              <span>T</span>
+            </h2>
+            <div class="about_wrap">
+              <div class="profile">
+                <div class="profile_photo">
+                  <span class="blind">프로필 사진</span>
+                </div>
+              </div>
+              <div class="about_box">
+                <h3 class="about_text">
+                  저는 신입 웹 퍼블리셔 이현준입니다.<br />
+                  사용자에게 필요한 기능을 개발 및 적용 시키고,<br />
+                  아름다운 인터페이스와 애니메이션을 구현하는 것을<br />
+                  좋아해서 웹 퍼블리셔를 선택하게 되었습니다.<br />
+                  <br />
+                  좋아하는 일을 위해 정체되어있지 않고 <br />
+                  더 발전하기 위해 항상 노력하고자 합니다.<br />
+                  'Semantic Markup'을 할수 있으며, <br />
+                  최신 기술을 알기위해 끊임없이 공부중입니다.
+                </h3>
+              </div>
+
+              <div class="profile_third">
+                <div class="profile_des m-b">
+                  <h2><i class="fas fa-user"></i>Profile</h2>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td><span class="profile_txt">이름</span></td>
+                        <td>Lee Hyun Jun / 이현준</td>
+                      </tr>
+                      <tr>
+                        <td><span class="profile_txt">생년월일</span></td>
+                        <td>1997.09.08</td>
+                      </tr>
+                      <tr>
+                        <td><span class="profile_txt">지역</span></td>
+                        <td>서울 강동구 명일동</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="profile_history m-b">
+                  <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td><span class="profile_txt">2021.08</span></td>
+                        <td>비전대학교 건축과 졸업</td>
+                      </tr>
+                      <tr>
+                        <td><span class="profile_txt">2021.10 </span></td>
+                        <td>위코드 오프라인 코딩 과정 이수</td>
+                      </tr>
+                      <tr>
+                        <td><span class="profile_txt">2021.10 </span></td>
+                        <td>제누이오 인턴</td>
+                      </tr>
+                      <tr>
+                        <td><span class="profile_txt">2022.12 </span></td>
+                        <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 )</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="skills" class="section">
+          <div class="port_inner">
+            <h2 class="loading mb-0">
+              <span>S</span>
+              <span>K</span>
+              <span>I</span>
+              <span>L</span>
+              <span>L</span>
+              <span>S</span>
             </h2>
             <p class="sub_text">* 이미지를 호버해보세요 *</p>
             <div class="skill_bg">
-                <ul class="skill">
-                    <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
-                        <img src="./asset/img/HTML5_logo.png" alt="" class="skill_img">
-                        <span class="skill_tip">웹 표준과 웹 접근성을 준수하는
-                            HTML 구조설계로 시맨틱 태그를 사용하여 마크업을 작성합니다.
-                            </span>
-                    </li>
-                    <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
-                            <img src="./asset/img/css3_logo.png" alt="" class="skill_img skill_right">
-                            <span class="skill_tip tip_right">CSS를 통해 시안에 따른 디자인을 구현하고
-                                미디어 쿼리를 통해 반응형 웹제작이 가능합니다.</span>
-                    </li>
-                        <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
-                            <img src="./asset/img/js_logo.png" alt="" class="skill_img">
-                            <span class="skill_tip">필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와 병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄 압니다.</span>
-                    </li>
-                        <li class="skill_logo"  data-aos="zoom-in" data-aos-duration="1500">
-                            <img src="./asset/img/jQuery_logo.png" alt="" class="skill_img skill_right">
-                            <span class="skill_tip tip_right">제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이 가능합니다.</span>
-                    </li>
-                </ul>
+              <ul class="skill">
+                <li
+                  class="skill_logo"
+                  data-aos="zoom-in"
+                  data-aos-duration="1500"
+                >
+                  <img
+                    src="./asset/img/HTML5_logo.png"
+                    alt=""
+                    class="skill_img"
+                  />
+                  <span class="skill_tip"
+                    >웹 표준과 웹 접근성을 준수하는 HTML 구조설계로 시맨틱
+                    태그를 사용하여 마크업을 작성합니다.
+                  </span>
+                </li>
+                <li
+                  class="skill_logo"
+                  data-aos="zoom-in"
+                  data-aos-duration="1500"
+                >
+                  <img
+                    src="./asset/img/css3_logo.png"
+                    alt=""
+                    class="skill_img skill_right"
+                  />
+                  <span class="skill_tip tip_right"
+                    >CSS를 통해 시안에 따른 디자인을 구현하고 Media Query를 통해
+                    반응형 웹제작이 가능합니다.</span
+                  >
+                </li>
+                <li
+                  class="skill_logo"
+                  data-aos="zoom-in"
+                  data-aos-duration="1500"
+                >
+                  <img src="./asset/img/js_logo.png" alt="" class="skill_img" />
+                  <span class="skill_tip"
+                    >필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와
+                    병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄
+                    압니다.</span
+                  >
+                </li>
+                <li
+                  class="skill_logo"
+                  data-aos="zoom-in"
+                  data-aos-duration="1500"
+                >
+                  <img
+                    src="./asset/img/jQuery_logo.png"
+                    alt=""
+                    class="skill_img skill_right"
+                  />
+                  <span class="skill_tip tip_right"
+                    >제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이
+                    가능합니다.</span
+                  >
+                </li>
+              </ul>
             </div>
-            <script type="text/javascript">
-                
-     
-                $('.counter').counterUp({
-    delay: 10,
-    time: 1000
-});
-                </script>
-        </div>
-    </section>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-      </script>
-    <section id="direction">
-        <div class="cnt_inner">
+          </div>
+        </section>
+        <script src="./asset/js/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+        <section id="direction" class="section">
+          <div class="port_inner">
             <h2 class="loading">
-                <span>D</span>
-                <span>I</span>
-                <span>R</span>
-                <span>E</span>
-                <span>C</span>
-                <span>T</span>
-                <span>I</span>
-                <span>O</span>
-                <span>N</span>
+              <span>D</span>
+              <span>I</span>
+              <span>R</span>
+              <span>E</span>
+              <span>C</span>
+              <span>T</span>
+              <span>I</span>
+              <span>O</span>
+              <span>N</span>
             </h2>
-            <div class="bg">
-                <span class="ba11"></span>
-                <span class="ba12"></span>
+
+            <div class="direction_text mt100">
+              <div
+                class="con_left"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+              >
+                <p>
+                  제가<br />
+                  일을할 땐
+                </p>
+              </div>
+              <div class="con_right">
+                <ul data-aos="fade-left" data-aos-duration="1500">
+                  <li>
+                    1. 웹 표준과 웹 접근성을 고려한 마크업을 하기 위해
+                    노력합니다.
+                  </li>
+                  <li>2. 책임감을 가지고 맡은 일은 끝까지 해냅니다.</li>
+                  <li>3. 어떠한 일이든 효율적으로 하는 것을 좋아합니다.</li>
+                  <li>4. 성실하고 우직하게 일에 임합니다.</li>
+                  <li>5. 작은 호기심을 가지고 끊임없이 공부합니다.</li>
+                </ul>
+              </div>
             </div>
+            <div class="bg">
+              <span class="ba11"></span>
+              <span class="ba12"></span>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer_inner">
+          <div class="footer_title">
+            <span>Contact</span>
+            <h2>Contact</h2>
+            <p class="plz">
+              "시간 내어 제 포트폴리오를 봐 주셔서 감사합니다.<br />
+              아직 많이 부족하지만 꾸준히 노력중이니 많은 기대 부탁 드리겠습니다
+              :)"
+            </p>
+          </div>
+          <div class="contacts">
+            <ul>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email</h3>
+                <a href="mailto:guswns1411@naver.com"
+                  ><p>guswns1411@naver.com</p></a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <h3>Number</h3>
+                010-8286-2797
+              </li>
+              <li>
+                <i class="fa-solid fa-message"></i>
+                <h3>KakaoTalk</h3>
+                <p>Lee1411</p>
+              </li>
+            </ul>
+          </div>
         </div>
-    </section>
-
-    <footer>
-    </footer>
-
-    
+      </footer>
+    </div>
     <script type="text/javascript" src="./asset/js/navi.js"></script>
-</body>
+  </body>
 </html>

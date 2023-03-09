@@ -16,18 +16,14 @@ function nav() {
 
     var link = $('.nav li');
     link.on('click',function(e){
-        //href 속성을 통해, section id 타겟을 잡음
         var target = $($(this).find('a').attr('data-parent')); 
         
-        //target section의 좌표를 통해 꼭대기로 이동
         $('html, body').animate({
             scrollTop: target.offset().top
         },600);
         
-        //on 클래스 부여
         $(this).addClass('on');
 
-        //앵커를 통해 이동할때, URL에 #id가 붙지 않도록 함.
         e.preventDefault();
     });
     
@@ -149,7 +145,6 @@ function btnTop() {
 }
 
 $(document).ready(function(){
-    // niceScroll
     $("html").niceScroll();
 
     nav();
@@ -183,7 +178,6 @@ $(document).ready(function(){
             $(".nav").removeClass("open");
         }
     });
-
     
 });
 
@@ -193,12 +187,10 @@ $(window).on({
         bodyOn();
         homeTxt();
         onScroll();   
-        // mobile();
         $(".preloader").delay(1200).fadeOut("slow");
     },
     "resize":function(){
         onScroll();    
-        // mobile();
     },
     "scroll":function(){
         bodyOn();         
@@ -213,3 +205,6 @@ $(window).on({
 });
 
 // $(window).trigger('scroll');
+
+
+
