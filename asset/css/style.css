@@ -83,7 +83,7 @@ table {
 
 /* header */
 header {
-    width: 1400px;
+    width: 1024px;
     height: 70px;
     position: fixed;
     z-index: 5;
@@ -173,6 +173,25 @@ header .nav a {
 }
 nav a:hover:before, nav a:hover:after { 
     opacity:1; transform:translateY(0px); 
+}
+
+@media (max-width: 1023px) {
+  header { width:94%; top:1.5rem; }
+  header .inner { width:100%; }
+
+  main .section {width: 1200px;}
+  main .port_inner {width: 100% !important;}
+  main .port_inner .loading {text-align: center; margin-bottom: 0;}
+  main .port_inner .loading::before {top: 20px; left: 270px;}
+  main #about .port_inner .about_wrap {justify-content: space-around; margin: 70px 0;}
+  main #about .port_inner .about_wrap .profile_third {display: none;}
+  main #about .port_inner .about_tb {display: block;}
+  main #about .port_inner .about_tb .profile_third {display: flex; justify-content: space-around;}
+  main #skills .port_inner .sub_text {text-align: center;}
+  main #skills .port_inner .skill_bg .skill .skill_logo {padding: 0;}
+  main #skills .port_inner .skill_bg .skill .skill_logo .skill_tip {top: 35%; line-height: 1.4; padding: 20px; left: auto; }
+  main #skills .port_inner .skill_bg .skill .skill_logo .tip_right {left: 40px;}
+  main #skills .port_inner .skill_bg .skill .skill_logo .tip_rights {left: 25%}
 }
 /* header */
 
@@ -420,6 +439,9 @@ section .loading::before {
 }
 .profile_third table tbody {
   line-height: 1.8;
+}
+.about_tb {
+  display: none;
 }
 .blind {
   position: absolute;

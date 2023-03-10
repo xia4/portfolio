@@ -84,20 +84,6 @@ function skillsChart(){
     var scroll = document.documentElement.scrollTop;
     $("#skills")[scroll > skTop-500 ? 'addClass' : 'removeClass']('on');
 
-    if( (scroll > abTop+100)  ) {
-        $('.chart').easyPieChart({
-            barColor:"#82bbb5",
-            scaleColor:false,
-            lineCap: "round",
-            lineWidth:10,
-            size:100,
-            onStart: $.noop,
-            onStop: $.noop,
-            onStep: function(from, to, percent) {
-                $(this.el).find('.percent').text(Math.round(percent));
-            }
-        });
-    }
 
 }
 
@@ -116,16 +102,6 @@ function portfolioGrid(){
         var filterValue = $( this ).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
-}
-
-function mobile(){
-    if($(window).width() <= 579 ){
-        $('#about .lt').removeClass('inLeft').addClass('inUp');
-        $('#about .rt').removeClass('inRight').addClass('inUp');
-    } else {
-        $('#about .lt').removeClass('inUp').addClass('inLeft');
-        $('#about .rt').removeClass('inUp').addClass('inRight');
-    }
 }
 
 function btnTop() {
