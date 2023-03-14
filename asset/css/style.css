@@ -120,6 +120,9 @@ header h1 a {
     color: #fff;
     padding: 0 20px;
 }
+header .nav_toggle {
+  display: none;
+}
 header .nav {
     height: 100%;
     display: table;
@@ -175,24 +178,6 @@ nav a:hover:before, nav a:hover:after {
     opacity:1; transform:translateY(0px); 
 }
 
-@media (max-width: 1023px) {
-  header { width:94%; top:1.5rem; }
-  header .inner { width:100%; }
-
-  main .section {width: 1200px;}
-  main .port_inner {width: 100% !important;}
-  main .port_inner .loading {text-align: center; margin-bottom: 0;}
-  main .port_inner .loading::before {top: 20px; left: 270px;}
-  main #about .port_inner .about_wrap {justify-content: space-around; margin: 70px 0;}
-  main #about .port_inner .about_wrap .profile_third {display: none;}
-  main #about .port_inner .about_tb {display: block;}
-  main #about .port_inner .about_tb .profile_third {display: flex; justify-content: space-around;}
-  main #skills .port_inner .sub_text {text-align: center;}
-  main #skills .port_inner .skill_bg .skill .skill_logo {padding: 0;}
-  main #skills .port_inner .skill_bg .skill .skill_logo .skill_tip {top: 35%; line-height: 1.4; padding: 20px; left: auto; }
-  main #skills .port_inner .skill_bg .skill .skill_logo .tip_right {left: 40px;}
-  main #skills .port_inner .skill_bg .skill .skill_logo .tip_rights {left: 25%}
-}
 /* header */
 
 
@@ -400,6 +385,7 @@ section .loading::before {
 #about .about_wrap {
   display: flex;
   justify-content: space-between;
+  margin-top: 15%;
 }
 #about .profile {
   position: relative;
@@ -423,9 +409,11 @@ section .loading::before {
 }
 .profile_third h2 {
   font-size: 24px;
+  font-weight: 600;
   text-align: left;
   text-transform: none;
   margin-bottom: 20px;
+  color: rgba(97, 39, 96, 0.6);
 }
 .profile_third h2 i {
   margin-right: 5px;
@@ -502,7 +490,7 @@ section .loading::before {
   padding: 30px 20px;
   opacity: 0;
   transition: .4s ease-in;
-  background-color: #815854;
+  background-color: rgba(97, 39, 96, 0.6);
   border-radius: 1.063rem;
   font-size: 16px;
   font-weight: 600;
@@ -514,24 +502,24 @@ section .loading::before {
 position: absolute;
 border-style: solid;
 border-width: 10px 15px 10px 0;
-border-color: transparent #815854;
+border-color: transparent rgba(97, 39, 96, 0.6);
 display: block;
 width: 0;
 z-index: 1;
 left: -15px;
-top: 28px;
+top: 20px;
 }
 .tip_right::after {
   content: '';
 position: absolute;
 border-style: solid;
 border-width: 10px 0 10px 15px;
-border-color: transparent #815854;
+border-color: transparent rgba(97, 39, 96, 0.6);
 display: block;
 width: 0;
 z-index: 1;
 left: 100%;
-top: 28px;
+top: 20px;
 }
 .skill_logo:hover .skill_tip {
   opacity: 1;
@@ -725,3 +713,55 @@ footer .footer_inner {
   text-align: center;
 }
 /* footer */
+
+/* pad */
+
+@media (max-width: 1023px) {
+  header { width:94%; top:1.5rem; }
+  header .inner { width:100%; }
+
+  main .section {width: 1200px;}
+  main .port_inner {width: 100%; padding-top: 140px;}
+  main .port_inner .loading {text-align: center; margin-bottom: 0;}
+  main .port_inner .loading::before {top: 69px; left: 200px;}
+  main #about .port_inner .about_wrap {justify-content: space-around; margin: 130px 0 70px;}
+  main #about .port_inner .about_wrap .profile_third {display: none;}
+  main #about .port_inner .about_tb {display: block;}
+  main #about .port_inner .about_tb .profile_third {display: flex; justify-content: space-around;}
+  main #skills .port_inner .sub_text {text-align: center;}
+  main #skills .port_inner .skill_bg .skill .skill_logo {padding: 0;}
+  main #skills .port_inner .skill_bg .skill .skill_logo .skill_tip {top: 35%; line-height: 1.4; padding: 20px; left: auto; }
+  main #skills .port_inner .skill_bg .skill .skill_logo .tip_right {left: 40px;}
+  main #skills .port_inner .skill_bg .skill .skill_logo .tip_rights {left: 25%}
+  main #direction {height: 100vh;}
+  main #direction .port_inner .mt100 {margin-top: 80px;} 
+  main #direction .port_inner .direction_text {flex-direction: column;}
+  main #direction .port_inner .direction_text .con_left p {padding: 6vh;}
+  main #direction .port_inner .direction_text .con_right {border-top: 1px solid black; border-left: none;}
+  main #direction .port_inner .direction_text .con_right ul {padding: 6vh 4vh 4vh;}
+  main #direction .port_inner .bg {display: none;}
+  #wrap footer .footer_inner {width: 100%;}
+}
+
+/* pad */
+
+/* mobile */
+
+@media (max-width: 767px) {
+    #wrap header {height: 5rem; border-radius: 0;}
+    #wrap header .inner {display: block;}
+    #wrap header h1 { display:inline-flex; justify-content:center; align-items:center; flex-direction:column; height:100%; }
+    #wrap header .inner .nav.open { max-height:100vh; height:auto; background: rgb(64 64 64 / 58%) }
+    #wrap header .inner .nav_toggle { display:block; top:1.7rem; right:2rem; background-color:transparent; color:#fff; outline:none; border:0; padding:0; cursor:pointer; width:2rem; height:1.4rem; position:relative; float:right; }
+    #wrap header .inner .nav_toggle .nav_icon  { width:2rem; height:1.4rem; position:relative; }
+    #wrap header .inner .nav_toggle .nav_icon span { position:absolute; width:100%; height:0.1rem; background:#fff; display:block; transition:all ease-in-out 0.3s; cursor:pointer; }
+    #wrap header .inner .nav_toggle .nav_icon span:nth-of-type(1) { top:0; }
+    #wrap header .inner .nav_toggle .nav_icon span:nth-of-type(2) { top:45%; }
+    #wrap header .inner .nav_toggle .nav_icon span:nth-of-type(3) { bottom:0; }
+    #wrap header .inner .nav_toggle.open_nav_toggle .nav_icon span:nth-of-type(1) {-webkit-transform: translateY (0.9rem) rotate (-45deg);transform: translateY(0.9rem) rotate(-45deg);}
+    #wrap header .inner .nav_toggle.open_nav_toggle .nav_icon span:nth-of-type(2) { opacity:0; }
+    #wrap header .inner .nav_toggle.open_nav_toggle .nav_icon span:nth-of-type(3) { -webkit-transform: translateY(-0.4rem) rotate(45deg); transform: translateY(-0.4rem) rotate(45deg); }
+    #wrap header nav {width: 100%; margin-right: 0;}
+    #wrap header .nav {margin: 0;width: 100%;padding: 0 1rem 0;box-sizing: border-box;;max-height: 0;overflow: hidden;transition: all ease-in-out 0.3s;display: block;}
+    #wrap header .nav li {display: block; position: relative; padding: 1.4rem 2rem; height: auto;}
+  }
