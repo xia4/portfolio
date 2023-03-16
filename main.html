@@ -20,11 +20,11 @@
     <title>이현준 | 웹 포트폴리오</title>
   </head>
   <body>
-    <!-- <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader">
       <div class="item">
         <img src="./asset/img/loadingImg.gif" alt="" />
       </div>
-    </div> -->
+    </div>
 
     <div id="wrap">
       <header>
@@ -192,6 +192,65 @@
               <span>S</span>
             </h2>
             <p class="sub_text">* 이미지를 호버해보세요 *</p>
+            <div id="accordion_wrap">
+              <div class="que">
+                <span class="que_title"><img src="./asset/img/HTML5_logo.png" alt="html5">HTML</span>
+                <div class="arrow_wrap">
+                  <span class="arrow_top">↑</span>
+                  <span class="arrow_bottom">↓</span>
+                </div>
+              </div>
+              <div class="anw">
+                <span>웹 표준과 웹 접근성을 준수하는 HTML 구조설계로 시맨틱 태그를 사용하여 마크업을 작성합니다.</span>
+              </div>
+              <div class="que">
+                <span class="que_title"><img src="./asset/img/css3_logo.png" alt="css">CSS</span>
+                <div class="arrow_wrap">
+                  <span class="arrow_top">↑</span>
+                  <span class="arrow_bottom">↓</span>
+                </div>
+              </div>
+              <div class="anw">
+                <span>CSS를 통해 시안에 따른 디자인을 구현하고 Media Query를 통해 반응형 웹 제작이 가능합니다.</span>
+              </div>
+              <div class="que">
+                <span class="que_title"><img src="./asset/img/js_logo.png" alt="js">javascript</span>
+                <div class="arrow_wrap">
+                  <span class="arrow_top">↑</span>
+                  <span class="arrow_bottom">↓</span>
+                </div>
+              </div>
+              <div class="anw">
+                <span>필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와 병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄 압니다.</span>
+              </div>
+              <div class="que">
+                <span class="que_title"><img src="./asset/img/jQuery_logo.png" alt="">jQuery</span>
+                <div class="arrow_wrap">
+                  <span class="arrow_top">↑</span>
+                  <span class="arrow_bottom">↓</span>
+                </div>
+              </div>
+              <div class="anw">
+                <span>제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이 가능합니다.</span>
+              </div>
+              <div class="que">
+                <span class="que_title"><img src="./asset/img/office_logo.png" alt="">Office</span>
+                <div class="arrow_wrap">
+                  <span class="arrow_top">↑</span>
+                  <span class="arrow_bottom">↓</span>
+                </div>
+              </div>
+              <div class="anw">
+                <span>파워포인트, 엑셀, 워드 오피스 관련 프로그램 사용이 가능합니다.</span>
+              </div>
+            </div>
+            <script>
+              $(".que").click(function() {
+                $(this).next(".anw").stop().slideToggle(300);
+                $(this).toggleClass('on').siblings().removeClass('on');
+                $(this).next(".anw").siblings(".anw").slideUp(300);
+              });
+            </script>
             <div class="skill_bg">
               <ul class="skill">
                 <li class="skill_logo" data-aos="zoom-in" data-aos-duration="1500">
@@ -265,7 +324,7 @@
               <span>N</span>
             </h2>
 
-            <div class="direction_text mt100">
+            <div class="direction_text mt200">
               <div
                 class="con_left"
                 data-aos="fade-right"

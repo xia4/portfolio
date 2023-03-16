@@ -363,8 +363,8 @@ section .loading::before {
 .mb-0 {
   margin-bottom: 0;
 }
-.mt100 {
-  margin-top: 100px;
+.mt200 {
+  margin-top: 200px;
 }
 .port_inner {
   width: 1400px;
@@ -469,6 +469,7 @@ section .loading::before {
   color: rgba(97, 39, 96, 0.6);
   font-weight: 600;
 }
+#accordion_wrap {display: none;}
 .skill {
   display: flex;
   flex-direction: column;
@@ -539,6 +540,7 @@ top: 20px;
   position: absolute;
   top: 700px;
   right: -300px;
+  z-index: -1;
 }
 .ba11, .ba12 {
   width: 700px;
@@ -589,7 +591,9 @@ top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .direction_text .con_left {
   flex-basis: 50%;
@@ -735,7 +739,7 @@ footer .footer_inner {
   main #skills .port_inner .skill_bg .skill .skill_logo .tip_rights {left: 25%}
   main #direction {height: 100vh;}
   main #direction .port_inner .mt100 {margin-top: 80px;} 
-  main #direction .port_inner .direction_text {flex-direction: column;}
+  main #direction .port_inner .direction_text {flex-direction: column; box-shadow: none; margin-top: 100px;}
   main #direction .port_inner .direction_text .con_left p {padding: 6vh;}
   main #direction .port_inner .direction_text .con_right {border-top: 1px solid black; border-left: none;}
   main #direction .port_inner .direction_text .con_right ul {padding: 6vh 4vh 4vh;}
@@ -764,4 +768,72 @@ footer .footer_inner {
     #wrap header nav {width: 100%; margin-right: 0;}
     #wrap header .nav {margin: 0;width: 100%;padding: 0 1rem 0;box-sizing: border-box;;max-height: 0;overflow: hidden;transition: all ease-in-out 0.3s;display: block;}
     #wrap header .nav li {display: block; position: relative; padding: 1.4rem 2rem; height: auto;}
+    #about .port_inner .about_wrap .profile .profile_photo {width: 300px; height: 385px;}
+    #skills .port_inner .skill_bg {display: none;}
+    #skills .port_inner #accordion_wrap {display: block; width: 80%; margin: 0 auto; margin-top: 20%;}
+    .que:first-child{
+      border-top: 1px solid black;
+    }
+    
+  .que{
+    position: relative;
+    padding: 17px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #dddddd;
+    
+  }
+  .que img {width: 15%; margin-right: 20px; vertical-align: middle;}
+  .que .que_title {font-size: 16px; font-weight: 600;  }
+  .que::before{
+    display: inline-block;
+    content: 'Q';
+    font-size: 16px;
+    color: rgba(97, 39, 96, 0.6);
+    margin: 0 5px;
+  }
+  
+  .que.on>span{
+    font-weight: bold;
+    color: rgba(97, 39, 96, 0.6); 
+  }
+    
+  .anw {
+    display: none;
+    overflow: hidden;
+    font-size: 14px;
+    background-color: #fff;
+    color: rgba(97, 39, 96, 0.6);
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 27px 20px;
+  }
+    
+  .anw::before {
+    display: inline-block;
+    content: 'A.';
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    margin: 0 5px;
+  }
+  
+  .arrow_wrap {
+    position: absolute;
+    top:50%; right: 10px;
+    transform: translate(0, -50%);
+  }
+  
+  .que .arrow_top {
+    display: none;
+  }
+  .que .arrow_bottom {
+    display: block;
+  }
+  .que.on .arrow_bottom {
+    display: none;
+  }
+  .que.on .arrow_top {
+    display: block; 
+  }
   }
