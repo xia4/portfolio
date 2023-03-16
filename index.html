@@ -20,13 +20,12 @@
     <title>이현준 | 웹 포트폴리오</title>
   </head>
   <body>
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
       <div class="item">
         <img src="./asset/img/loadingImg.gif" alt="" />
       </div>
-    </div>
+    </div> -->
 
-    <div id="wrap">
       <header>
         <div class="inner">
           <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
@@ -38,14 +37,13 @@
           <nav class="header_nav">
             <ul class="nav">
               <li><a data-parent="#home" data-scroll="home">home</a></li>
-              <li class="close"><a data-parent="#about" data-scroll="about">about</a></li>
+              <li><a data-parent="#about" data-scroll="about">about</a></li>
               <li><a data-parent="#skills" data-scroll="skills">skills</a></li>
               <li><a data-parent="#direction" data-scroll="direction">direction</a></li>
             </ul>
           </nav>
         </div>
       </header>
-
       <main>
         <section id="home" class="section">
           <div class="inner">
@@ -53,7 +51,7 @@
               <span class="typed"></span>
             </div>
             <div class="scroll_down">
-              <a href="#about" data-scroll="about" class="animated bounce">
+              <a data-parent="#home" data-scroll="about" class="animated bounce">
                 <i class="fa-solid fa-chevron-down"></i>
               </a>
               <span>Scroll Down</span>
@@ -325,18 +323,14 @@
             </h2>
 
             <div class="direction_text mt200">
-              <div
-                class="con_left"
-                data-aos="fade-right"
-                data-aos-duration="1500"
-              >
+              <div class="con_left" data-aos="fade-up" data-aos-duration="1500">
                 <p>
                   제가<br />
                   일을할 땐
                 </p>
               </div>
               <div class="con_right">
-                <ul data-aos="fade-left" data-aos-duration="1500">
+                <ul data-aos="fade-up" data-aos-duration="1500">
                   <li>
                     1. 웹 표준과 웹 접근성을 고려한 마크업을 하기 위해
                     노력합니다.
@@ -367,7 +361,7 @@
             </p>
           </div>
           <div class="contacts">
-            <ul>
+            <ul class="ul_dt">
               <li>
                 <i class="fa-solid fa-envelope"></i>
                 <h3>Email</h3>
@@ -386,10 +380,14 @@
                 <p>Lee1411</p>
               </li>
             </ul>
+            <ul class="ul_mb">
+                <li>Email : guswns1411@naver.com</li>
+                <li>Tel : 010 - 8286 - 2797</li>
+                <li>Talk : Lee1411</li>
+            </ul>
           </div>
         </div>
       </footer>
-    </div>
     <script type="text/javascript" src="./asset/js/navi.js"></script>
   </body>
 </html>

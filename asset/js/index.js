@@ -150,7 +150,6 @@ $(document).ready(function(){
         if( $("header").hasClass("open") ){
             $(".nav_toggle").removeClass("open_nav_toggle");
             $(".nav").removeClass("open");
-            $(".close").removeClass("open_nav_toggle");
         }
     });
     
