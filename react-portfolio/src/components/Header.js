@@ -87,6 +87,33 @@ const Nav = styled.nav`
         }
     }
 `
+const ToggleBtn = styled.button`
+    display:none;
+    background: transparent;
+    border: 0;
+    .nav_icon {
+        width: 2rem;
+        height: 1.4rem;
+        position: relative;
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 0.1rem;
+            background: #fff;
+            display: block;
+            transition: all ease-in-out 0.3s;
+            cursor: pointer;
+
+            &:nth-of-type(1) {top: 0;}
+            &:nth-of-type(2) {top: 45%;}
+            &:nth-of-type(3) {bottom: 0;}
+        }
+    }
+    @media (max-width: 768px) {
+        display: block
+    }
+`
 
 function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -128,13 +155,13 @@ function Header() {
         <HeaderWrapper isNavOpen={isNavOpen} className={isTop ? 'top' : ''}>
             <HeaderInner>
                 <H1>
-                    <a className="logo" href="#home" onClick={() => scrollToSection('home')}>Xia Web Portfolio</a>
+                    <a className="logo" href="#home" onClick={() => scrollToSection('home')}>HyunJun</a>
                 </H1>
-                <button className="nav_toggle" onClick={toggleNav}>
+                <ToggleBtn className="nav_toggle" onClick={toggleNav}>
                     <div className="nav_icon">
                         <span></span><span></span><span></span>
                     </div>
-                </button>
+                </ToggleBtn>
                <Nav className={`header_nav ${isNavOpen ? 'open' : ''}`}>
                     <ul className="list">
                         {['home', 'about', 'skills', 'direction'].map((item) => (
