@@ -1,395 +1,1630 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image⁄x-icon" href="./asset/img/coding.png"/>
-    <link rel="stylesheet" type="text/css" href="./asset/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="https://kit.fontawesome.com/30bcb6c21d.css" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="./asset/css/aos.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script type="text/javascript" src="./asset/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="./asset/js/typed.min.js"></script>
-    <script type="text/javascript" src="./asset/js/index.js"></script>
-    <script type="text/javascript" src="./asset/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="./asset/js/TweenMax.min.js"></script>
-    <script type="text/javascript" src="./asset/js/jquery.nicescroll.js"></script>
-    <script type="text/javascript" src="./asset/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="./asset/js/fontawesome.js" crossorigin="anonymous"></script>
-    <title>이현준 | 웹 포트폴리오</title>
-  </head>
-  <body>
-    <div class="preloader" id="preloader">
-      <div class="item">
-        <img src="./asset/img/loadingImg.gif" alt="" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image⁄x-icon" href="./asset/img/coding.png" />
+  <link rel="stylesheet" type="text/css" href="./asset/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://kit.fontawesome.com/30bcb6c21d.css" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="./asset/css/aos.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script type="text/javascript" src="./asset/js/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="./asset/js/typed.min.js"></script>
+  <script type="text/javascript" src="./asset/js/index.js"></script>
+  <script type="text/javascript" src="./asset/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="./asset/js/TweenMax.min.js"></script>
+  <script type="text/javascript" src="./asset/js/jquery.nicescroll.js"></script>
+  <script type="text/javascript" src="./asset/js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="./asset/js/fontawesome.js" crossorigin="anonymous"></script>
+  <title>이현준 | 웹 포트폴리오</title>
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+  /* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    color: #646c77;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* preloading */
+  .preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 99999;
+  }
+
+  .preloader .item {
+    position: absolute;
+    width: 240px;
+    height: 180px;
+    left: 50%;
+    top: 50%;
+    margin-left: -120px;
+    margin-top: -90px;
+  }
+
+  .preloader .item img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* preloading */
+
+  /* header */
+  header {
+    width: 1024px;
+    height: 70px;
+    position: fixed;
+    z-index: 5;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0px 0;
+    box-sizing: border-box;
+    transition: all 0.4s;
+    font: 20px 'Source Sans Pro', sans-serif;
+    background: rgb(64 64 64 / 58%);
+    border-radius: 1.8rem;
+  }
+
+  header.top {
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
+
+  header .inner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: table;
+  }
+
+  header h1 {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 27px;
+    font-family: 'Righteous', cursive;
+  }
+
+  header h1 a {
+    color: #fff;
+    padding: 0 20px;
+  }
+
+  header .nav_toggle {
+    display: none;
+  }
+
+  header .nav {
+    height: 100%;
+    display: table;
+  }
+
+  header .nav li {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    padding: 16px 20px;
+    height: 100%;
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+  }
+
+  header .nav li:hover a {
+    color: #fff;
+  }
+
+  header .nav .on a {
+    color: #fff;
+  }
+
+  header .nav a {
+    color: #ababab;
+    transition: all 0.6s;
+    text-transform: uppercase;
+  }
+
+  .header_nav {
+    float: right;
+    height: 100%;
+    margin-right: 27px;
+  }
+
+  .header_nav a:before {
+    top: 0px;
+    transform: translateY(10px);
+  }
+
+  .header_nav .on a:after {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .header_nav a:after {
+    bottom: -1px;
+    transform: translateY(-10px);
+  }
+
+  .header_nav a:before,
+  .header_nav a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background: #eee;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  nav a:hover:before,
+  nav a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  /* header */
+
+
+  /* home */
+  #home {
+    padding: 0;
+    background-image: url(../img/home.jpg);
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    min-height: 550px;
+    position: relative;
+    z-index: 0;
+    height: 100vh;
+    background-position: 50% 0px;
+    display: table;
+  }
+
+  #home .inner {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  #home .inner .type-wrap span {
+    font: 45px 'ESans', sans-serif;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .type-wrap {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .typed::after {
+    content: '|';
+    display: inline;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .scroll_down {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .scroll_down i {
+    position: relative;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    height: 50px;
+    width: 30px;
+    line-height: 60px;
+    display: inline-block;
+    color: #fff;
+    font-size: 21px;
+  }
+
+  .scroll_down span {
+    color: rgb(204, 204, 204);
+  }
+
+  .scroll_down i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all .2s;
+  }
+
+  .fa-down::before {
+    content: '\2304';
+    font-style: normal;
+    font-size: 35px;
+    line-height: 0;
+  }
+
+  .bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+  }
+
+  @-webkit-keyframes bounce {
+
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+    }
+
+    50% {
+      -webkit-transform: translateY(-10px);
+    }
+  }
+
+  @keyframes bounce {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+  }
+
+  /* home */
+
+  /* common */
+  section .loading::before {
+    display: block;
+    font-size: 200px;
+    color: #e0e0e0;
+    position: absolute;
+    letter-spacing: 0;
+    top: 70px;
+    left: 300px;
+    z-index: -1;
+  }
+
+  .loading {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 50px;
+    color: rgba(97, 39, 96, 0.6);
+    font-weight: 700;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 70px;
+    cursor: pointer;
+  }
+
+  .loading span {
+    display: inline-block;
+    margin: 0 -.075em;
+    animation: loading .7s infinite alternate;
+  }
+
+  .loading span:nth-child(2) {
+    animation-delay: .1s;
+  }
+
+  .loading span:nth-child(3) {
+    animation-delay: .2s;
+  }
+
+  .loading span:nth-child(4) {
+    animation-delay: .3s;
+  }
+
+  .loading span:nth-child(5) {
+    animation-delay: .4s;
+  }
+
+  .loading span:nth-child(6) {
+    animation-delay: .5s;
+  }
+
+  .loading span:nth-child(7) {
+    animation-delay: .6s;
+  }
+
+  .loading span:nth-child(8) {
+    animation-delay: .7s;
+  }
+
+  .loading span:nth-child(9) {
+    animation-delay: .8s;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.8);
+    }
+  }
+
+  #about .loading::before {
+    content: '01';
+  }
+
+  #skills .loading::before {
+    content: '02';
+  }
+
+  #direction .loading::before {
+    content: '03';
+  }
+
+  .mb-0 {
+    margin-bottom: 0;
+  }
+
+  .mt200 {
+    margin-top: 200px;
+  }
+
+  .port_inner {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 120px;
+  }
+
+  /* common */
+
+  /* about */
+  #about {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: relative;
+    z-index: 0;
+  }
+
+  #about .about_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+  }
+
+  #about .profile {
+    position: relative;
+    font-size: 38px;
+    z-index: 1;
+  }
+
+  #about .profile .profile_photo {
+    position: relative;
+    width: 413px;
+    height: 500px;
+    background-image: url(../img/FLD16122.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-bottom: 30px;
+  }
+
+  #about .about_wrap .about_box .about_text {
+    line-height: 2.7;
+    color: rgb(109, 109, 109);
+    font-weight: 600;
+  }
+
+  .profile_third h2 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: none;
+    margin-bottom: 20px;
+    color: rgba(97, 39, 96, 0.6);
+  }
+
+  .profile_third h2 i {
+    margin-right: 5px;
+  }
+
+  .profile_third .m-b {
+    margin-bottom: 50px;
+  }
+
+  .profile_third .profile_txt {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .profile_third table tbody {
+    line-height: 1.8;
+  }
+
+  .about_tb {
+    display: none;
+  }
+
+  .blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }
+
+  .profile_nickname {
+    display: inline-block;
+    font-family: "Montserrat", AppleGothic, sans-serif, Helvetica;
+    font-weight: 700;
+  }
+
+  .profile_name {
+    display: inline-block;
+    font-size: 45%;
+    margin-left: 0.3em;
+    color: #747474;
+  }
+
+  /* about */
+
+  /* skill */
+  #skills {
+    width: 100%;
+    background-attachment: fixed;
+    min-height: 550px;
+    position: relative;
+    z-index: 0;
+    height: 100vh;
+    background-color: #F9EBDE;
+    display: table;
+  }
+
+  .sub_text {
+    margin: 20px 0 70px;
+    font-size: 16px;
+    color: rgba(97, 39, 96, 0.6);
+    font-weight: 600;
+  }
+
+  #accordion_wrap {
+    display: none;
+  }
+
+  .skill {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill .skill_right {
+    float: right;
+  }
+
+  .skill .skill_logo {
+    padding: 0 100px;
+  }
+
+  .skill .skill_logo img {
+    width: 210px;
+    height: 210px;
+  }
+
+  .skill .skill_logo .skill_tip {
+    position: absolute;
+    top: 40%;
+    left: 350px;
+    padding: 30px 20px;
+    opacity: 0;
+    transition: .4s ease-in;
+    background-color: rgba(97, 39, 96, 0.6);
+    border-radius: 1.063rem;
+    font-size: 16px;
+    font-weight: 600;
+    color: #F9EBDE;
+    visibility: hidden;
+  }
+
+  .skill_tip::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent rgba(97, 39, 96, 0.6);
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: -15px;
+    top: 20px;
+  }
+
+  .tip_right::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent rgba(97, 39, 96, 0.6);
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: 100%;
+    top: 20px;
+  }
+
+  .skill_logo:hover .skill_tip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* skills */
+
+  /* direction */
+  #direction {
+    width: 100%;
+    height: 85vh;
+    background: #fff;
+    position: relative;
+    z-index: 0;
+  }
+
+  .bg {
+    position: absolute;
+    top: 700px;
+    right: -300px;
+    z-index: -1;
+  }
+
+  .ba11,
+  .ba12 {
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: #747474;
+    display: inline-block;
+  }
+
+  .ba11 {
+    opacity: 0.07;
+    position: relative;
+    animation: ba12-1 3s linear infinite alternate;
+  }
+
+  .ba12 {
+    opacity: 0.15;
+    position: relative;
+    animation: ba12-2 3s linear infinite alternate;
+  }
+
+  @keyframes ba12-1 {
+    0% {
+      right: -550px;
+      bottom: -20px;
+    }
+
+    50% {
+      right: -520px;
+      bottom: -60px;
+    }
+
+    100% {
+      right: -510px;
+      bottom: -90px;
+    }
+  }
+
+  @keyframes ba12-2 {
+    0% {
+      right: 530px;
+      bottom: 385px;
+    }
+
+    50% {
+      right: 550px;
+      bottom: 370px;
+    }
+
+    100% {
+      right: 570px;
+      bottom: 355px;
+    }
+  }
+
+  .direction_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .direction_text .con_left {
+    flex-basis: 50%;
+    font-size: 2.9rem;
+    text-align: center;
+    line-height: 2;
+    color: #323232;
+    font-family: 'Black Han Sans', sans-serif;
+  }
+
+  .direction_text .con_left p {
+    padding: 8vh;
+  }
+
+  .direction_text .con_right {
+    flex-basis: 50%;
+    border-left: 1px solid black;
+  }
+
+  .direction_text .con_right ul {
+    padding: 4vh;
+  }
+
+  .direction_text .con_right ul li {
+    line-height: 2.8;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  /* direction */
+
+  /* footer */
+  footer {
+    width: 100%;
+    position: absolute;
+    background-color: #eee;
+  }
+
+  footer .footer_inner {
+    width: 1400px;
+    margin: 60px auto;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .footer_title {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+  }
+
+  .footer_title span {
+    position: absolute;
+    top: 30px;
+    color: #d7d7d7;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 52px;
+    text-transform: uppercase;
+    line-height: 0;
+    cursor: default;
+  }
+
+  .footer_title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: rgba(97, 39, 96, 0.6);
+    position: relative;
+    z-index: 2;
+    cursor: default;
+  }
+
+  .footer_title .plz {
+    margin-bottom: 0;
+    position: relative;
+    line-height: 1.5;
+    z-index: 2;
+    font-size: 20px;
+  }
+
+  .contacts {
+    height: 200px;
+  }
+
+  .contacts ul {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .contacts ul li {
+    width: 50%;
+    text-align: center;
+    padding: 20px 0 30px 0;
+    box-shadow: 0 0 30px rgb(214 215 216 / 60%);
+    margin: 0 20px;
+    color: #444;
+  }
+
+  .contacts ul li i {
+
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    background: rgba(97, 39, 96, 0.6);
+  }
+
+  .contacts ul li h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(97, 39, 96, 0.6);
+    margin: 10px 0;
+  }
+
+  .contacts ul li p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .contacts ul img {
+    width: 23px;
+    vertical-align: middle;
+  }
+
+  .contacts ul a {
+    color: #000;
+  }
+
+  .contacts p {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* footer */
+
+  /* pad */
+
+  @media (max-width: 1023px) {
+    header {
+      width: 94%;
+      top: 1.5rem;
+    }
+
+    header .inner {
+      width: 100%;
+    }
+
+    main .section {
+      width: 1200px;
+    }
+
+    main .port_inner {
+      width: 100%;
+      padding-top: 140px;
+    }
+
+    main .port_inner .loading {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    main .port_inner .loading::before {
+      top: 69px;
+      left: 200px;
+    }
+
+    main #about .port_inner .about_wrap {
+      justify-content: space-around;
+      margin: 130px 0 70px;
+    }
+
+    main #about .port_inner .about_wrap .profile_third {
+      display: none;
+    }
+
+    main #about .port_inner .about_tb {
+      display: block;
+    }
+
+    main #about .port_inner .about_tb .profile_third {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    main #skills .port_inner .sub_text {
+      text-align: center;
+    }
+
+    main #skills .port_inner .skill_bg .skill .skill_logo {
+      padding: 0;
+    }
+
+    main #skills .port_inner .skill_bg .skill .skill_logo .skill_tip {
+      top: 35%;
+      line-height: 1.4;
+      padding: 20px;
+      left: auto;
+    }
+
+    main #skills .port_inner .skill_bg .skill .skill_logo .tip_right {
+      left: 40px;
+    }
+
+    main #skills .port_inner .skill_bg .skill .skill_logo .tip_rights {
+      left: 25%
+    }
+
+    main #direction {
+      height: 100vh;
+    }
+
+    main #direction .port_inner .mt100 {
+      margin-top: 80px;
+    }
+
+    main #direction .port_inner .direction_text {
+      flex-direction: column;
+      box-shadow: none;
+      margin-top: 100px;
+    }
+
+    main #direction .port_inner .direction_text .con_left p {
+      padding: 6vh;
+    }
+
+    main #direction .port_inner .direction_text .con_right {
+      border-top: 1px solid black;
+      border-left: none;
+    }
+
+    main #direction .port_inner .direction_text .con_right ul {
+      padding: 6vh 4vh 4vh;
+    }
+
+    main #direction .port_inner .bg {
+      display: none;
+    }
+
+    #wrap footer .footer_inner {
+      width: 100%;
+    }
+  }
+
+  /* pad */
+
+  /* mobile */
+
+  @media (max-width: 767px) {
+    #wrap header {
+      height: 5rem;
+      border-radius: 0;
+    }
+
+    #wrap header .inner {
+      display: block;
+    }
+
+    #wrap header h1 {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #wrap header .inner .nav.open {
+      max-height: 100vh;
+      height: auto;
+      background: rgb(64 64 64 / 58%)
+    }
+
+    #wrap header .inner .nav_toggle {
+      display: block;
+      top: 1.7rem;
+      right: 2rem;
+      background-color: transparent;
+      color: #fff;
+      outline: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      width: 2rem;
+      height: 1.4rem;
+      position: relative;
+      float: right;
+    }
+
+    #wrap header .inner .nav_toggle .nav_icon {
+      width: 2rem;
+      height: 1.4rem;
+      position: relative;
+    }
+
+    #wrap header .inner .nav_toggle .nav_icon span {
+      position: absolute;
+      width: 100%;
+      height: 0.1rem;
+      background: #fff;
+      display: block;
+      transition: all ease-in-out 0.3s;
+      cursor: pointer;
+    }
+
+    #wrap header .inner .nav_toggle .nav_icon span:nth-of-type(1) {
+      top: 0;
+    }
+
+    #wrap header .inner .nav_toggle .nav_icon span:nth-of-type(2) {
+      top: 45%;
+    }
+
+    #wrap header .inner .nav_toggle .nav_icon span:nth-of-type(3) {
+      bottom: 0;
+    }
+
+    #wrap header .inner .nav_toggle.open_nav_toggle .nav_icon span:nth-of-type(1) {
+      -webkit-transform: translateY (0.9rem) rotate (-45deg);
+      transform: translateY(0.9rem) rotate(-45deg);
+    }
+
+    #wrap header .inner .nav_toggle.open_nav_toggle .nav_icon span:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    #wrap header .inner .nav_toggle.open_nav_toggle .nav_icon span:nth-of-type(3) {
+      -webkit-transform: translateY(-0.4rem) rotate(45deg);
+      transform: translateY(-0.4rem) rotate(45deg);
+    }
+
+    #wrap header nav {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    #wrap header .nav {
+      margin: 0;
+      width: 100%;
+      padding: 0 1rem 0;
+      box-sizing: border-box;
+      ;
+      max-height: 0;
+      overflow: hidden;
+      transition: all ease-in-out 0.3s;
+      display: block;
+    }
+
+    #wrap header .nav li {
+      display: block;
+      position: relative;
+      padding: 1.4rem 2rem;
+      height: auto;
+    }
+
+    #about .port_inner .about_wrap .profile .profile_photo {
+      width: 300px;
+      height: 385px;
+    }
+
+    #skills .port_inner .skill_bg {
+      display: none;
+    }
+
+    #skills .port_inner #accordion_wrap {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 20%;
+    }
+
+    .que:first-child {
+      border-top: 1px solid black;
+    }
+
+    .que {
+      position: relative;
+      padding: 17px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      border-bottom: 1px solid #dddddd;
+
+    }
+
+    .que img {
+      width: 15%;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+
+    .que .que_title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .que::before {
+      display: inline-block;
+      content: 'Q';
+      font-size: 16px;
+      color: rgba(97, 39, 96, 0.6);
+      margin: 0 5px;
+    }
+
+    .que.on>span {
+      font-weight: bold;
+      color: rgba(97, 39, 96, 0.6);
+    }
+
+    .anw {
+      display: none;
+      overflow: hidden;
+      font-size: 14px;
+      background-color: #fff;
+      color: rgba(97, 39, 96, 0.6);
+      font-weight: 700;
+      line-height: 1.5;
+      padding: 27px 20px;
+    }
+
+    .anw::before {
+      display: inline-block;
+      content: 'A.';
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      margin: 0 5px;
+    }
+
+    .arrow_wrap {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translate(0, -50%);
+    }
+
+    .que .arrow_top {
+      display: none;
+    }
+
+    .que .arrow_bottom {
+      display: block;
+    }
+
+    .que.on .arrow_bottom {
+      display: none;
+    }
+
+    .que.on .arrow_top {
+      display: block;
+    }
+  }
+</style>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div class="inner">
+        <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
+        <button class="nav_toggle">
+          <div class="nav_icon">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+        <nav class="header_nav">
+          <ul class="nav">
+            <li><a data-parent="#home" data-scroll="home">home</a></li>
+            <li class="close"><a data-parent="#about" data-scroll="about">about</a></li>
+            <li><a data-parent="#skills" data-scroll="skills">skills</a></li>
+            <li><a data-parent="#direction" data-scroll="direction">direction</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
 
-    <div id="wrap">
-      <header>
+    <main>
+      <section id="home" class="section">
         <div class="inner">
-          <h1><a class="logo" href="#home">Xia Web Portfolio</a></h1>
-          <button class="nav_toggle">
-            <div class="nav_icon">
-              <span></span><span></span><span></span>
-            </div>
-          </button>
-          <nav class="header_nav">
-            <ul class="nav">
-              <li><a data-parent="#home" data-scroll="home">home</a></li>
-              <li class="close"><a data-parent="#about" data-scroll="about">about</a></li>
-              <li><a data-parent="#skills" data-scroll="skills">skills</a></li>
-              <li><a data-parent="#direction" data-scroll="direction">direction</a></li>
-            </ul>
-          </nav>
+          <div class="type-wrap">
+            <span class="typed"></span>
+          </div>
+          <div class="scroll_down">
+            <a href="#about" data-scroll="about" class="animated bounce">
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <span>Scroll Down</span>
+          </div>
         </div>
-      </header>
-
-      <main>
-        <section id="home" class="section">
-          <div class="inner">
-            <div class="type-wrap">
-              <span class="typed"></span>
+      </section>
+      <section id="about" class="section">
+        <div class="port_inner">
+          <h2 class="loading">
+            <span>A</span>
+            <span>B</span>
+            <span>O</span>
+            <span>U</span>
+            <span>T</span>
+          </h2>
+          <div class="about_wrap">
+            <div class="profile">
+              <div class="profile_photo">
+                <span class="blind">프로필 사진</span>
+              </div>
             </div>
-            <div class="scroll_down">
-              <a href="#about" data-scroll="about" class="animated bounce">
-                <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <span>Scroll Down</span>
+            <div class="about_box">
+              <h3 class="about_text">
+                저는 신입 웹 퍼블리셔 이현준입니다.<br />
+                사용자에게 필요한 기능을 개발 및 적용 시키고,<br />
+                아름다운 인터페이스와 애니메이션을 구현하는 것을<br />
+                좋아해서 웹 퍼블리셔를 선택하게 되었습니다.<br />
+                <br />
+                좋아하는 일을 위해 정체되어있지 않고 <br />
+                더 발전하기 위해 항상 노력하고자 합니다.<br />
+                'Semantic Markup'을 할수 있으며, <br />
+                최신 기술을 알기위해 끊임없이 공부중입니다.
+              </h3>
+            </div>
+
+            <div class="profile_third">
+              <div class="profile_des m-b">
+                <h2><i class="fas fa-user"></i>Profile</h2>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><span class="profile_txt">이름</span></td>
+                      <td>Lee Hyun Jun / 이현준</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">생년월일</span></td>
+                      <td>1997.09.08</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">지역</span></td>
+                      <td>서울 영등포구 당산동</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="profile_history m-b">
+                <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><span class="profile_txt">2021.08</span></td>
+                      <td>비전대학교 건축과 졸업</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2021.10 </span></td>
+                      <td>위코드 오프라인 코딩 과정 이수</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2021.10 </span></td>
+                      <td>제누이오 인턴</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2022.12 </span></td>
+                      <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 )</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2023.06 </span></td>
+                      <td>서로커뮤니케이션 ( 웹 퍼블리셔 업무 )</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </section>
-        <section id="about" class="section">
-          <div class="port_inner">
-            <h2 class="loading">
-              <span>A</span>
-              <span>B</span>
-              <span>O</span>
-              <span>U</span>
-              <span>T</span>
-            </h2>
-            <div class="about_wrap">
-              <div class="profile">
-                <div class="profile_photo">
-                  <span class="blind">프로필 사진</span>
-                </div>
+          <div class="about_tb">
+            <div class="profile_third">
+              <div class="profile_des m-b">
+                <h2><i class="fas fa-user"></i>Profile</h2>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><span class="profile_txt">이름</span></td>
+                      <td>Lee Hyun Jun / 이현준</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">생년월일</span></td>
+                      <td>1997.09.08</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">지역</span></td>
+                      <td>서울 강동구 명일동</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="about_box">
-                <h3 class="about_text">
-                  저는 신입 웹 퍼블리셔 이현준입니다.<br />
-                  사용자에게 필요한 기능을 개발 및 적용 시키고,<br />
-                  아름다운 인터페이스와 애니메이션을 구현하는 것을<br />
-                  좋아해서 웹 퍼블리셔를 선택하게 되었습니다.<br />
-                  <br />
-                  좋아하는 일을 위해 정체되어있지 않고 <br />
-                  더 발전하기 위해 항상 노력하고자 합니다.<br />
-                  'Semantic Markup'을 할수 있으며, <br />
-                  최신 기술을 알기위해 끊임없이 공부중입니다.
-                </h3>
+              <div class="profile_history m-b">
+                <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><span class="profile_txt">2021.08</span></td>
+                      <td>비전대학교 건축과 졸업</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2021.10 </span></td>
+                      <td>위코드 오프라인 코딩 과정 이수</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2021.10 </span></td>
+                      <td>제누이오 인턴</td>
+                    </tr>
+                    <tr>
+                      <td><span class="profile_txt">2022.12 </span></td>
+                      <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 )</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-
-              <div class="profile_third">
-                <div class="profile_des m-b">
-                  <h2><i class="fas fa-user"></i>Profile</h2>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td><span class="profile_txt">이름</span></td>
-                        <td>Lee Hyun Jun / 이현준</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">생년월일</span></td>
-                        <td>1997.09.08</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">지역</span></td>
-                        <td>서울 강동구 명일동</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="profile_history m-b">
-                  <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td><span class="profile_txt">2021.08</span></td>
-                        <td>비전대학교 건축과 졸업</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">2021.10 </span></td>
-                        <td>위코드 오프라인 코딩 과정 이수</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">2021.10 </span></td>
-                        <td>제누이오 인턴</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">2022.12 </span></td>
-                        <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 )</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="about_tb">
-              <div class="profile_third">
-                <div class="profile_des m-b">
-                  <h2><i class="fas fa-user"></i>Profile</h2>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td><span class="profile_txt">이름</span></td>
-                        <td>Lee Hyun Jun / 이현준</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">생년월일</span></td>
-                        <td>1997.09.08</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">지역</span></td>
-                        <td>서울 강동구 명일동</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="profile_history m-b">
-                  <h2><i class="fa-solid fa-clock-rotate-left"></i>Histroy</h2>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td><span class="profile_txt">2021.08</span></td>
-                        <td>비전대학교 건축과 졸업</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">2021.10 </span></td>
-                        <td>위코드 오프라인 코딩 과정 이수</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">2021.10 </span></td>
-                        <td>제누이오 인턴</td>
-                      </tr>
-                      <tr>
-                        <td><span class="profile_txt">2022.12 </span></td>
-                        <td>주식회사 이유엠 ( 웹 퍼블리셔 업무 )</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
             </div>
           </div>
-        </section>
-        <section id="skills" class="section">
-          <div class="port_inner">
-            <h2 class="loading mb-0">
-              <span>S</span>
-              <span>K</span>
-              <span>I</span>
-              <span>L</span>
-              <span>L</span>
-              <span>S</span>
-            </h2>
-            <p class="sub_text">* 이미지를 호버해보세요 *</p>
-            <div id="accordion_wrap">
-              <div class="que">
-                <span class="que_title"><img src="./asset/img/HTML5_logo.png" alt="html5">HTML</span>
-                <div class="arrow_wrap">
-                  <span class="arrow_top">↑</span>
-                  <span class="arrow_bottom">↓</span>
-                </div>
-              </div>
-              <div class="anw">
-                <span>웹 표준과 웹 접근성을 준수하는 HTML 구조설계로 시맨틱 태그를 사용하여 마크업을 작성합니다.</span>
-              </div>
-              <div class="que">
-                <span class="que_title"><img src="./asset/img/css3_logo.png" alt="css">CSS</span>
-                <div class="arrow_wrap">
-                  <span class="arrow_top">↑</span>
-                  <span class="arrow_bottom">↓</span>
-                </div>
-              </div>
-              <div class="anw">
-                <span>CSS를 통해 시안에 따른 디자인을 구현하고 Media Query를 통해 반응형 웹 제작이 가능합니다.</span>
-              </div>
-              <div class="que">
-                <span class="que_title"><img src="./asset/img/js_logo.png" alt="js">javascript</span>
-                <div class="arrow_wrap">
-                  <span class="arrow_top">↑</span>
-                  <span class="arrow_bottom">↓</span>
-                </div>
-              </div>
-              <div class="anw">
-                <span>필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와 병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄 압니다.</span>
-              </div>
-              <div class="que">
-                <span class="que_title"><img src="./asset/img/jQuery_logo.png" alt="">jQuery</span>
-                <div class="arrow_wrap">
-                  <span class="arrow_top">↑</span>
-                  <span class="arrow_bottom">↓</span>
-                </div>
-              </div>
-              <div class="anw">
-                <span>제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이 가능합니다.</span>
-              </div>
-              <div class="que">
-                <span class="que_title"><img src="./asset/img/office_logo.png" alt="">Office</span>
-                <div class="arrow_wrap">
-                  <span class="arrow_top">↑</span>
-                  <span class="arrow_bottom">↓</span>
-                </div>
-              </div>
-              <div class="anw">
-                <span>파워포인트, 엑셀, 워드 오피스 관련 프로그램 사용이 가능합니다.</span>
+        </div>
+      </section>
+      <section id="skills" class="section">
+        <div class="port_inner">
+          <h2 class="loading mb-0">
+            <span>S</span>
+            <span>K</span>
+            <span>I</span>
+            <span>L</span>
+            <span>L</span>
+            <span>S</span>
+          </h2>
+          <p class="sub_text">* 이미지를 호버해보세요 *</p>
+          <div id="accordion_wrap">
+            <div class="que">
+              <span class="que_title"><img src="./asset/img/HTML5_logo.png" alt="html5">HTML</span>
+              <div class="arrow_wrap">
+                <span class="arrow_top">↑</span>
+                <span class="arrow_bottom">↓</span>
               </div>
             </div>
-            <script>
-              $(".que").click(function() {
-                $(this).next(".anw").stop().slideToggle(300);
-                $(this).toggleClass('on').siblings().removeClass('on');
-                $(this).next(".anw").siblings(".anw").slideUp(300);
-              });
-            </script>
-            <div class="skill_bg">
-              <ul class="skill">
-                <li class="skill_logo" data-aos="zoom-in" data-aos-duration="1500">
-                  <img src="./asset/img/HTML5_logo.png" alt="" class="skill_img"/>
-                  <span class="skill_tip">
-                    웹 표준과 웹 접근성을 준수하는 HTML 구조설계로 시맨틱
-                    태그를 사용하여 마크업을 작성합니다.
-                  </span>
+            <div class="anw">
+              <span>웹 표준과 웹 접근성을 준수하는 HTML 구조설계로 시맨틱 태그를 사용하여 마크업을 작성합니다.</span>
+            </div>
+            <div class="que">
+              <span class="que_title"><img src="./asset/img/css3_logo.png" alt="css">CSS</span>
+              <div class="arrow_wrap">
+                <span class="arrow_top">↑</span>
+                <span class="arrow_bottom">↓</span>
+              </div>
+            </div>
+            <div class="anw">
+              <span>CSS를 통해 시안에 따른 디자인을 구현하고 Media Query를 통해 반응형 웹 제작이 가능합니다.</span>
+            </div>
+            <div class="que">
+              <span class="que_title"><img src="./asset/img/js_logo.png" alt="js">javascript</span>
+              <div class="arrow_wrap">
+                <span class="arrow_top">↑</span>
+                <span class="arrow_bottom">↓</span>
+              </div>
+            </div>
+            <div class="anw">
+              <span>필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와 병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄 압니다.</span>
+            </div>
+            <div class="que">
+              <span class="que_title"><img src="./asset/img/jQuery_logo.png" alt="">jQuery</span>
+              <div class="arrow_wrap">
+                <span class="arrow_top">↑</span>
+                <span class="arrow_bottom">↓</span>
+              </div>
+            </div>
+            <div class="anw">
+              <span>제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이 가능합니다.</span>
+            </div>
+            <div class="que">
+              <span class="que_title"><img src="./asset/img/office_logo.png" alt="">Office</span>
+              <div class="arrow_wrap">
+                <span class="arrow_top">↑</span>
+                <span class="arrow_bottom">↓</span>
+              </div>
+            </div>
+            <div class="anw">
+              <span>파워포인트, 엑셀, 워드 오피스 관련 프로그램 사용이 가능합니다.</span>
+            </div>
+          </div>
+          <script>
+            $(".que").click(function () {
+              $(this).next(".anw").stop().slideToggle(300);
+              $(this).toggleClass('on').siblings().removeClass('on');
+              $(this).next(".anw").siblings(".anw").slideUp(300);
+            });
+          </script>
+          <div class="skill_bg">
+            <ul class="skill">
+              <li class="skill_logo" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="./asset/img/HTML5_logo.png" alt="" class="skill_img" />
+                <span class="skill_tip">
+                  웹 표준과 웹 접근성을 준수하는 HTML 구조설계로 시맨틱
+                  태그를 사용하여 마크업을 작성합니다.
+                </span>
+              </li>
+              <li class="skill_logo" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="./asset/img/css3_logo.png" alt="" class="skill_img skill_right" />
+                <span class="skill_tip tip_right">CSS를 통해 시안에 따른 디자인을 구현하고 Media Query를 통해
+                  반응형 웹제작이 가능합니다.</span>
+              </li>
+              <li class="skill_logo" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="./asset/img/js_logo.png" alt="" class="skill_img" />
+                <span class="skill_tip">필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와
+                  병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄
+                  압니다.</span>
+              </li>
+              <li class="skill_logo" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="./asset/img/jQuery_logo.png" alt="" class="skill_img skill_right" />
+                <span class="skill_tip tip_right tip_rights">제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이
+                  가능합니다.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <script src="./asset/js/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+      <section id="direction" class="section">
+        <div class="port_inner">
+          <h2 class="loading">
+            <span>D</span>
+            <span>I</span>
+            <span>R</span>
+            <span>E</span>
+            <span>C</span>
+            <span>T</span>
+            <span>I</span>
+            <span>O</span>
+            <span>N</span>
+          </h2>
+
+          <div class="direction_text mt200">
+            <div class="con_left" data-aos="fade-right" data-aos-duration="1500">
+              <p>
+                제가<br />
+                일을할 땐
+              </p>
+            </div>
+            <div class="con_right">
+              <ul data-aos="fade-left" data-aos-duration="1500">
+                <li>
+                  1. 웹 표준과 웹 접근성을 고려한 마크업을 하기 위해
+                  노력합니다.
                 </li>
-                <li
-                  class="skill_logo"
-                  data-aos="zoom-in"
-                  data-aos-duration="1500"
-                >
-                  <img
-                    src="./asset/img/css3_logo.png"
-                    alt=""
-                    class="skill_img skill_right"
-                  />
-                  <span class="skill_tip tip_right"
-                    >CSS를 통해 시안에 따른 디자인을 구현하고 Media Query를 통해
-                    반응형 웹제작이 가능합니다.</span
-                  >
-                </li>
-                <li
-                  class="skill_logo"
-                  data-aos="zoom-in"
-                  data-aos-duration="1500"
-                >
-                  <img src="./asset/img/js_logo.png" alt="" class="skill_img" />
-                  <span class="skill_tip"
-                    >필수적인 자바스크립트 활용이 가능하며 주로 제이쿼리와
-                    병행해서 활용합니다. 대체적인 자바스크립트를 읽을 줄
-                    압니다.</span
-                  >
-                </li>
-                <li
-                  class="skill_logo"
-                  data-aos="zoom-in"
-                  data-aos-duration="1500"
-                >
-                  <img
-                    src="./asset/img/jQuery_logo.png"
-                    alt=""
-                    class="skill_img skill_right"
-                  />
-                  <span class="skill_tip tip_right tip_rights"
-                    >제이쿼리 UI 플러그인 활용, 오픈 소스 활용 및 수정이
-                    가능합니다.</span
-                  >
-                </li>
+                <li>2. 책임감을 가지고 맡은 일은 끝까지 해냅니다.</li>
+                <li>3. 어떠한 일이든 효율적으로 하는 것을 좋아합니다.</li>
+                <li>4. 성실하고 우직하게 일에 임합니다.</li>
+                <li>5. 작은 호기심을 가지고 끊임없이 공부합니다.</li>
               </ul>
             </div>
           </div>
-        </section>
-        <script src="./asset/js/aos.js"></script>
-        <script>
-          AOS.init();
-        </script>
-        <section id="direction" class="section">
-          <div class="port_inner">
-            <h2 class="loading">
-              <span>D</span>
-              <span>I</span>
-              <span>R</span>
-              <span>E</span>
-              <span>C</span>
-              <span>T</span>
-              <span>I</span>
-              <span>O</span>
-              <span>N</span>
-            </h2>
-
-            <div class="direction_text mt200">
-              <div
-                class="con_left"
-                data-aos="fade-right"
-                data-aos-duration="1500"
-              >
-                <p>
-                  제가<br />
-                  일을할 땐
-                </p>
-              </div>
-              <div class="con_right">
-                <ul data-aos="fade-left" data-aos-duration="1500">
-                  <li>
-                    1. 웹 표준과 웹 접근성을 고려한 마크업을 하기 위해
-                    노력합니다.
-                  </li>
-                  <li>2. 책임감을 가지고 맡은 일은 끝까지 해냅니다.</li>
-                  <li>3. 어떠한 일이든 효율적으로 하는 것을 좋아합니다.</li>
-                  <li>4. 성실하고 우직하게 일에 임합니다.</li>
-                  <li>5. 작은 호기심을 가지고 끊임없이 공부합니다.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="bg">
-              <span class="ba11"></span>
-              <span class="ba12"></span>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <div class="footer_inner">
-          <div class="footer_title">
-            <span>Contact</span>
-            <h2>Contact</h2>
-            <p class="plz">
-              "시간 내어 제 포트폴리오를 봐 주셔서 감사합니다.<br />
-              아직 많이 부족하지만 꾸준히 노력중이니 많은 기대 부탁 드리겠습니다
-              :)"
-            </p>
-          </div>
-          <div class="contacts">
-            <ul>
-              <li>
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Email</h3>
-                <a href="mailto:guswns1411@naver.com"
-                  ><p>guswns1411@naver.com</p></a
-                >
-              </li>
-              <li>
-                <i class="fa-solid fa-phone"></i>
-                <h3>Number</h3>
-                010-8286-2797
-              </li>
-              <li>
-                <i class="fa-solid fa-message"></i>
-                <h3>KakaoTalk</h3>
-                <p>Lee1411</p>
-              </li>
-            </ul>
-          </div>
+          <!-- <div class="bg">
+            <span class="ba11"></span>
+            <span class="ba12"></span>
+          </div> -->
         </div>
-      </footer>
-    </div>
-    <script type="text/javascript" src="./asset/js/navi.js"></script>
-  </body>
+      </section>
+    </main>
+    <footer>
+      <div class="footer_inner">
+        <div class="footer_title">
+          <span>Contact</span>
+          <h2>Contact</h2>
+          <p class="plz">
+            "시간 내어 제 포트폴리오를 봐 주셔서 감사합니다.<br />
+            아직 많이 부족하지만 꾸준히 노력중이니 많은 기대 부탁 드리겠습니다
+            :)"
+          </p>
+        </div>
+        <div class="contacts">
+          <ul>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <h3>Email</h3>
+              <a href="mailto:guswns1411@naver.com">
+                <p>guswns1411@naver.com</p>
+              </a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <h3>Number</h3>
+              010-8286-2797
+            </li>
+            <li>
+              <i class="fa-solid fa-message"></i>
+              <h3>KakaoTalk</h3>
+              <p>Lee1411</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="text/javascript" src="./asset/js/navi.js"></script>
+</body>
+
 </html>

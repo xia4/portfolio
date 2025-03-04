@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+    */
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+    q {
+        quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    section {
+        position: relative;
+        background-color: #c4ff30;
+    }
+
+    section:nth-child(2) {
+        background-color: #fff;
+    }
+
+    section:nth-child(2n) .container {
+        flex-direction: row-reverse;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .sticky {
+        position: relative;
+        top: 0;
+        width: 50%;
+    }
+
+    .sticky_item {
+        position: sticky;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    .sticky_item .image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+
+    .sticky_item .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: width, height .5s;
+    }
+
+    .home-list-item {
+        display: flex;
+        justify-content: space-between;
+        width: 48%;
+        overflow: hidden;
+        padding-right: 2%;
+    }
+
+    .home-list-scroll {
+        width: 48%;
+        position: relative;
+    }
+
+    .home-list-scroll-list-mid {
+        padding-block: 4rem;
+    }
+
+    .loop {
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .loop .image {
+        display: block;
+        margin-bottom: 1rem;
+        height: 0;
+        padding-bottom: 125%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .loop .image .meta {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 99;
+        margin: 0;
+    }
+
+    .loop .desc .footer {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    .loop .desc .header h3 {
+        margin: 0 0 .75rem;
+        height: 72px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        transition: color .5s;
+        line-height: 1.25;
+        letter-spacing: -1px;
+        font-size: 1.8rem;
+    }
+
+    .loop .desc .footer .content p.excerpt {
+        margin: 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        font-size: 15px;
+        height: 48px;
+    }
+
+    .loop .desc .author {
+        flex: 0 0 60px;
+        text-align: center;
+    }
+
+    .loop .desc .author .author-image {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .loop .desc .author p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 15px;
+    }
+</style>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="sticky">
+                <div class="sticky_item">
+                    <div class="image">
+
+                        <img width="1200" height="1800"
+                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp"
+                            class="attachment-full size-full wp-post-image entered lazyloaded" alt="" decoding="async"
+                            data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp 1200w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-768x1152.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-1024x1536.webp 1024w"
+                            data-lazy-sizes="(max-width: 1200px) 100vw, 1200px"
+                            data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp"
+                            data-ll-status="loaded" sizes="(max-width: 1200px) 100vw, 1200px"
+                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp 1200w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-768x1152.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-1024x1536.webp 1024w"><noscript><img
+                                width="1200" height="1800"
+                                src="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp"
+                                class="attachment-full size-full wp-post-image" alt="" decoding="async"
+                                srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp 1200w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-768x1152.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-1024x1536.webp 1024w"
+                                sizes="(max-width: 1200px) 100vw, 1200px" /></noscript>
+                    </div>
+                </div>
+            </div>
+            <div class="home-list-item">
+                <div class="home-list-scroll home-list-mid">
+                    <div class="home-list-scroll-list-mid">
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75616">
+                                <div class="meta">
+                                    <h5>
+                                        EAT </h5>
+                                </div>
+                                <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                    <source type="image/webp"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg.webp 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg.webp 1365w"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg.webp 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg.webp 1365w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        sizes="(max-width: 1600px) 100vw, 1600px">
+                                    <img width="1600" height="2400"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg"
+                                        alt="" decoding="async"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg 1365w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg"
+                                        data-ll-status="loaded" class="entered lazyloaded"
+                                        sizes="(max-width: 1600px) 100vw, 1600px"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg 1365w">
+                                </picture>
+                                <noscript>
+                                    <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                        <source type="image/webp"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg.webp 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg.webp 1365w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                        <img width="1600" height="2400"
+                                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg"
+                                            alt="" decoding="async"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg 1365w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                    </picture>
+                                </noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        EAT </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75616">나폴리맛피아는 천재가 분명해, 롯데리아 콜라보 버거</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            나폴리맛피아, 우승자의 자격이 있습니다 </p>
+                                        <p class="date">
+                                            2025. 02. 26 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/editor-b">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp">
+                                                <img width="579" height="579"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp" />
+                                                    <img width="579" height="579"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            김석준 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75706">
+                                <div class="meta">
+                                    <h5>
+                                        TECH </h5>
+                                </div>
+                                <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                    <source type="image/webp"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg.webp 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg.webp 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg.webp 2048w"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg.webp 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg.webp 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg.webp 2048w"
+                                        data-lazy-sizes="(max-width: 2560px) 100vw, 2560px"
+                                        sizes="(max-width: 2560px) 100vw, 2560px">
+                                    <img width="2560" height="1710"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg" alt=""
+                                        decoding="async"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg 2048w"
+                                        data-lazy-sizes="(max-width: 2560px) 100vw, 2560px"
+                                        data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg"
+                                        data-ll-status="loaded" class="entered lazyloaded"
+                                        sizes="(max-width: 2560px) 100vw, 2560px"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg 2048w">
+                                </picture>
+                                <noscript>
+                                    <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                        <source type="image/webp"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg.webp 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg.webp 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg.webp 2048w"
+                                            sizes="(max-width: 2560px) 100vw, 2560px" />
+                                        <img width="2560" height="1710"
+                                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg"
+                                            alt="" decoding="async"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg 2048w"
+                                            sizes="(max-width: 2560px) 100vw, 2560px" />
+                                    </picture>
+                                </noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        TECH </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75706">시그마 BF, 가장 작은 풀프레임 미러리스 카메라</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            애플이 미러리스 카메라를 만들었다면 이렇게 생기지 않았을까? </p>
+                                        <p class="date">
+                                            2025. 02. 25 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/kudokun">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg.webp">
+                                                <img width="500" height="500"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg.webp" />
+                                                    <img width="500" height="500"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            이주형 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-list-scroll home-list-long">
+                    <div class="home-list-scroll-list-long" style="transform: translate3d(0px, -0.0005px, 0px);">
+
+
+
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75679">
+                                <div class="meta">
+                                    <h5>
+                                        EAT </h5>
+                                </div>
+                                <img width="1400" height="1318"
+                                    src="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp"
+                                    class="attachment-large size-large wp-post-image entered lazyloaded" alt=""
+                                    decoding="async"
+                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp 1400w, https://the-edit.co.kr/wp-content/uploads/2025/02/potato-768x723.webp 768w"
+                                    data-lazy-sizes="(max-width: 1400px) 100vw, 1400px"
+                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp"
+                                    data-ll-status="loaded" sizes="(max-width: 1400px) 100vw, 1400px"
+                                    srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp 1400w, https://the-edit.co.kr/wp-content/uploads/2025/02/potato-768x723.webp 768w"><noscript><img
+                                        width="1400" height="1318"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp"
+                                        class="attachment-large size-large wp-post-image" alt="" decoding="async"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp 1400w, https://the-edit.co.kr/wp-content/uploads/2025/02/potato-768x723.webp 768w"
+                                        sizes="(max-width: 1400px) 100vw, 1400px" /></noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        EAT </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75679">[새로나왔]&nbsp;2월 4주차 신상 리스트</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            미쉐린 3스타 셰프가 참여한 프링글스부터 프린세스 메이커까지 </p>
+                                        <p class="date">
+                                            2025. 02. 24 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/theedit">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg.webp">
+                                                <img width="800" height="776"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg.webp" />
+                                                    <img width="800" height="776"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            디에디트 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75306">
+                                <div class="meta">
+                                    <h5>
+                                        LIFE </h5>
+                                </div>
+                                <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                    <source type="image/webp"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg.webp 1536w"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg.webp 1536w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        sizes="(max-width: 1600px) 100vw, 1600px">
+                                    <img width="1600" height="1136"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg" alt=""
+                                        decoding="async"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg 1536w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg"
+                                        data-ll-status="loaded" class="entered lazyloaded"
+                                        sizes="(max-width: 1600px) 100vw, 1600px"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg 1536w">
+                                </picture>
+                                <noscript>
+                                    <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                        <source type="image/webp"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg.webp 1536w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                        <img width="1600" height="1136"
+                                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg" alt=""
+                                            decoding="async"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg 1536w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                    </picture>
+                                </noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        LIFE </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75306">LG 퓨리케어 오브제컬렉션으로 챙기는 올해의 갓생</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            물 마시기 운동 오늘부터 시작 </p>
+                                        <p class="date">
+                                            2025. 02. 20 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/editor-b">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp">
+                                                <img width="579" height="579"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp" />
+                                                    <img width="579" height="579"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            김석준 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="sticky">
+                <div class="sticky_item">
+                    <div class="image">
+
+                        <img width="1200" height="1800"
+                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp"
+                            class="attachment-full size-full wp-post-image entered lazyloaded" alt="" decoding="async"
+                            data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp 1200w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-768x1152.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-1024x1536.webp 1024w"
+                            data-lazy-sizes="(max-width: 1200px) 100vw, 1200px"
+                            data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp"
+                            data-ll-status="loaded" sizes="(max-width: 1200px) 100vw, 1200px"
+                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp 1200w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-768x1152.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-1024x1536.webp 1024w"><noscript><img
+                                width="1200" height="1800"
+                                src="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp"
+                                class="attachment-full size-full wp-post-image" alt="" decoding="async"
+                                srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash.webp 1200w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-768x1152.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/sam-clarke-ZEfFgaXVaV4-unsplash-1024x1536.webp 1024w"
+                                sizes="(max-width: 1200px) 100vw, 1200px" /></noscript>
+                    </div>
+                </div>
+            </div>
+            <div class="home-list-item">
+                <div class="home-list-scroll home-list-mid">
+                    <div class="home-list-scroll-list-mid">
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75616">
+                                <div class="meta">
+                                    <h5>
+                                        EAT </h5>
+                                </div>
+                                <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                    <source type="image/webp"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg.webp 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg.webp 1365w"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg.webp 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg.webp 1365w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        sizes="(max-width: 1600px) 100vw, 1600px">
+                                    <img width="1600" height="2400"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg"
+                                        alt="" decoding="async"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg 1365w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg"
+                                        data-ll-status="loaded" class="entered lazyloaded"
+                                        sizes="(max-width: 1600px) 100vw, 1600px"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg 1365w">
+                                </picture>
+                                <noscript>
+                                    <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                        <source type="image/webp"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg.webp 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg.webp 1365w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                        <img width="1600" height="2400"
+                                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg"
+                                            alt="" decoding="async"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-768x1152.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1024x1536.jpg 1024w, https://the-edit.co.kr/wp-content/uploads/2025/02/1600_retouched_-8-1-1365x2048.jpg 1365w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                    </picture>
+                                </noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        EAT </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75616">나폴리맛피아는 천재가 분명해, 롯데리아 콜라보 버거</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            나폴리맛피아, 우승자의 자격이 있습니다 </p>
+                                        <p class="date">
+                                            2025. 02. 26 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/editor-b">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp">
+                                                <img width="579" height="579"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp" />
+                                                    <img width="579" height="579"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            김석준 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75706">
+                                <div class="meta">
+                                    <h5>
+                                        TECH </h5>
+                                </div>
+                                <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                    <source type="image/webp"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg.webp 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg.webp 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg.webp 2048w"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg.webp 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg.webp 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg.webp 2048w"
+                                        data-lazy-sizes="(max-width: 2560px) 100vw, 2560px"
+                                        sizes="(max-width: 2560px) 100vw, 2560px">
+                                    <img width="2560" height="1710"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg" alt=""
+                                        decoding="async"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg 2048w"
+                                        data-lazy-sizes="(max-width: 2560px) 100vw, 2560px"
+                                        data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg"
+                                        data-ll-status="loaded" class="entered lazyloaded"
+                                        sizes="(max-width: 2560px) 100vw, 2560px"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg 2048w">
+                                </picture>
+                                <noscript>
+                                    <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                        <source type="image/webp"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg.webp 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg.webp 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg.webp 2048w"
+                                            sizes="(max-width: 2560px) 100vw, 2560px" />
+                                        <img width="2560" height="1710"
+                                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg"
+                                            alt="" decoding="async"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01.jpg 2560w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-768x513.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-1536x1026.jpg 1536w, https://the-edit.co.kr/wp-content/uploads/2025/02/bf_camera_01-2048x1368.jpg 2048w"
+                                            sizes="(max-width: 2560px) 100vw, 2560px" />
+                                    </picture>
+                                </noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        TECH </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75706">시그마 BF, 가장 작은 풀프레임 미러리스 카메라</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            애플이 미러리스 카메라를 만들었다면 이렇게 생기지 않았을까? </p>
+                                        <p class="date">
+                                            2025. 02. 25 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/kudokun">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg.webp">
+                                                <img width="500" height="500"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg.webp" />
+                                                    <img width="500" height="500"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2023/11/500_authorkudokun_profile.jpg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            이주형 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-list-scroll home-list-long">
+                    <div class="home-list-scroll-list-long" style="transform: translate3d(0px, -0.0005px, 0px);">
+
+
+
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75679">
+                                <div class="meta">
+                                    <h5>
+                                        EAT </h5>
+                                </div>
+                                <img width="1400" height="1318"
+                                    src="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp"
+                                    class="attachment-large size-large wp-post-image entered lazyloaded" alt=""
+                                    decoding="async"
+                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp 1400w, https://the-edit.co.kr/wp-content/uploads/2025/02/potato-768x723.webp 768w"
+                                    data-lazy-sizes="(max-width: 1400px) 100vw, 1400px"
+                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp"
+                                    data-ll-status="loaded" sizes="(max-width: 1400px) 100vw, 1400px"
+                                    srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp 1400w, https://the-edit.co.kr/wp-content/uploads/2025/02/potato-768x723.webp 768w"><noscript><img
+                                        width="1400" height="1318"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp"
+                                        class="attachment-large size-large wp-post-image" alt="" decoding="async"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/potato.webp 1400w, https://the-edit.co.kr/wp-content/uploads/2025/02/potato-768x723.webp 768w"
+                                        sizes="(max-width: 1400px) 100vw, 1400px" /></noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        EAT </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75679">[새로나왔]&nbsp;2월 4주차 신상 리스트</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            미쉐린 3스타 셰프가 참여한 프링글스부터 프린세스 메이커까지 </p>
+                                        <p class="date">
+                                            2025. 02. 24 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/theedit">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg.webp">
+                                                <img width="800" height="776"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg.webp" />
+                                                    <img width="800" height="776"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2024/03/800_the.jpg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            디에디트 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="loop">
+                            <a class="image" href="https://the-edit.co.kr/75306">
+                                <div class="meta">
+                                    <h5>
+                                        LIFE </h5>
+                                </div>
+                                <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                    <source type="image/webp"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg.webp 1536w"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg.webp 1536w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        sizes="(max-width: 1600px) 100vw, 1600px">
+                                    <img width="1600" height="1136"
+                                        src="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg" alt=""
+                                        decoding="async"
+                                        data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg 1536w"
+                                        data-lazy-sizes="(max-width: 1600px) 100vw, 1600px"
+                                        data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg"
+                                        data-ll-status="loaded" class="entered lazyloaded"
+                                        sizes="(max-width: 1600px) 100vw, 1600px"
+                                        srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg 1536w">
+                                </picture>
+                                <noscript>
+                                    <picture class="attachment-large size-large wp-post-image" decoding="async">
+                                        <source type="image/webp"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg.webp 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg.webp 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg.webp 1536w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                        <img width="1600" height="1136"
+                                            src="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg" alt=""
+                                            decoding="async"
+                                            srcset="https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood.jpg 1600w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-768x545.jpg 768w, https://the-edit.co.kr/wp-content/uploads/2025/02/1000_mood-1536x1091.jpg 1536w"
+                                            sizes="(max-width: 1600px) 100vw, 1600px" />
+                                    </picture>
+                                </noscript>
+                            </a>
+
+                            <div class="desc">
+                                <div class="header">
+                                    <h5 class="meta">
+                                        LIFE </h5>
+                                    <h3 class="title">
+                                        <a href="https://the-edit.co.kr/75306">LG 퓨리케어 오브제컬렉션으로 챙기는 올해의 갓생</a>
+
+                                    </h3>
+                                </div>
+                                <div class=" footer">
+                                    <div class="content">
+                                        <p class="excerpt">
+                                            물 마시기 운동 오늘부터 시작 </p>
+                                        <p class="date">
+                                            2025. 02. 20 </p>
+                                    </div>
+                                    <a class="author" href="https://the-edit.co.kr/author/editor-b">
+                                        <div class="author-image">
+                                            <picture>
+                                                <source type="image/webp"
+                                                    data-lazy-srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp"
+                                                    srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp">
+                                                <img width="579" height="579"
+                                                    src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    alt=""
+                                                    data-lazy-src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                    data-ll-status="loaded" class="entered lazyloaded">
+                                            </picture>
+                                            <noscript>
+                                                <picture>
+                                                    <source type="image/webp"
+                                                        srcset="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg.webp" />
+                                                    <img width="579" height="579"
+                                                        src="https://the-edit.co.kr/wp-content/uploads/2023/11/editorb.jpeg"
+                                                        alt="" />
+                                                </picture>
+                                            </noscript>
+                                        </div>
+                                        <p>
+                                            김석준 </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
