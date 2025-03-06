@@ -13,21 +13,28 @@ const HeaderWrapper = styled.header`
     padding: 0 40px;
     box-sizing: border-box;
     transition: all 0.4s;
-    font: 20px 'Source Sans Pro', sans-serif;
     background: rgb(107 143 209 / 58%);
     border-radius: 1.8rem;
 
     @media (max-width: 768px) {
         height: 60px;
+        backdrop-filter:blur(10px);
         .header_nav {
             display: ${props => (props.isNavOpen ? 'block' : 'none')};
             position: absolute;
-            top: 70px;
+            top: 60px;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 0 0 1.8rem 1.8rem;
+            background: transparent;
+            border-bottom: 2px solid rgb(107 143 209 / 58%);
+            transform: translateX(100%);
+            transition: all 0.2s;
+
+            &.open {
+                transform: translateX(0);
+            }
+            ul.list {
+            }
         }
     }
 
@@ -40,7 +47,6 @@ const HeaderWrapper = styled.header`
 `;
 
 const HeaderInner = styled.div`
-    position: relative;
     width: 100%;
     margin: 0 auto;
     height: 100%;
@@ -49,9 +55,12 @@ const HeaderInner = styled.div`
     justify-content: space-between;
 `
 const H1 = styled.h1 `
-    font-family: 'Righteous', cursive;
-    font-size: 20px;
+    font-size: 26px;
 
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
+    
     a {
         color: #b4e3ff;
     }
@@ -63,23 +72,31 @@ const Nav = styled.nav`
     .list {
         display: flex;
         height: 100%;
+        @media screen and (max-width: 768px) {
+            padding: 0 20px;
+        }
 
         li {
             display: flex;
             align-items: center;
             position: relative;
             padding: 16px 20px;
-            font-family: 'Righteous', cursive;
             cursor: pointer;
-
+            
             a {
                 color: #b4e3ff;
+                font-size: 20px;
+                font-weight: 600;
                 transition: all 0.6s;
                 text-transform: uppercase;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                }
             }
 
             &.on a {
-                color: #fff;
+                color: #00a0ff;
             }
         }
     }
@@ -171,7 +188,7 @@ function Header() {
                                     href={`#${item}`}
                                     data-scroll={item}
                                     onClick={(e) => {
-                                         e.preventDefault();
+                                        e.preventDefault();
                                         scrollToSection(item);
                                         setIsNavOpen(false);
                                     }}

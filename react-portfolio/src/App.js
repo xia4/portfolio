@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const handleFullPageScroll = () => {
-      if (window.innerWidth <= 1024) return; // 1024px 이하일 때 풀페이지 스크롤 비활성화
+      if (window.innerWidth <= 1024) return;
 
       const sections = document.querySelectorAll('.section');
       const sectionCount = sections.length;
@@ -30,6 +30,14 @@ function App() {
           event.preventDefault();
           let delta = event.deltaY || -event.detail;
           let moveTop = window.scrollY;
+
+          if (section.id === 'about') {
+            const aboutSection = section.querySelector('section');
+            if (aboutSection && (aboutSection.scrollLeft > 0 || delta < 0)) {
+              aboutSection.scrollLeft += delta;
+              return;
+            }
+          }
 
           if (delta > 0 && index < sectionCount - 1) {
             moveTop = window.pageYOffset + sections[index + 1].getBoundingClientRect().top;
@@ -42,14 +50,12 @@ function App() {
 
         section.addEventListener('wheel', handleWheel, { passive: false });
 
-        // Cleanup
         return () => section.removeEventListener('wheel', handleWheel);
       });
     };
 
     handleFullPageScroll();
 
-    // 해상도 변화 감지 (resize 시 다시 체크)
     window.addEventListener('resize', handleFullPageScroll);
 
     return () => window.removeEventListener('resize', handleFullPageScroll);
