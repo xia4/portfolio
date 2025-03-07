@@ -45,7 +45,6 @@ function PageLoadAnimation({ onComplete }) {
             .to('.page-load', { yPercent: -100, delay: 2.5, ease: Power3.easeIn, duration: 0.8 }, 'label')
             .to('.title-box', { opacity: 0, delay: 2, duration: 1.7 }, 'label')
             .set('.page-load', { pointerEvents: 'none', delay: 3.3 }, 'label')
-            .fromTo('.sc-visual .row *', { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.3, ease: Power4.easeOut, delay: 3.3 }, 'label');
 
         load.play();
     }, [onComplete]);

@@ -24,6 +24,10 @@ function App() {
 
       const sections = document.querySelectorAll('.section');
       const sectionCount = sections.length;
+      let targetX = 0;
+      let currentX = 0;
+      let animationFrame;
+      const paddingOffset = 150;
 
       sections.forEach((section, index) => {
         const handleWheel = (event) => {
@@ -32,9 +36,40 @@ function App() {
           let moveTop = window.scrollY;
 
           if (section.id === 'about') {
-            const aboutSection = section.querySelector('section');
-            if (aboutSection && (aboutSection.scrollLeft > 0 || delta < 0)) {
-              aboutSection.scrollLeft += delta;
+            const aboutWrapper = section.querySelector('#about section');
+            if (aboutWrapper) {
+              const totalScrollWidth = aboutWrapper.scrollWidth - aboutWrapper.clientWidth;
+
+              targetX += delta;
+              targetX = Math.max(0, Math.min(targetX, totalScrollWidth));
+
+              cancelAnimationFrame(animationFrame);
+              const smoothScroll = () => {
+                currentX += (targetX - currentX) * 0.1;
+                aboutWrapper.style.transform = `translateX(-${currentX + paddingOffset}px)`;
+                aboutWrapper.dataset.scrollX = currentX;
+
+                if (Math.abs(targetX - currentX) > 0.5) {
+                  animationFrame = requestAnimationFrame(smoothScroll);
+                }
+              };
+              smoothScroll();
+
+              if (delta > 0 && targetX >= totalScrollWidth - 10 && index < sectionCount - 1) {
+                setTimeout(() => {
+                  moveTop = window.pageYOffset + sections[index + 1].getBoundingClientRect().top;
+                  window.scrollTo({ top: moveTop, left: 0, behavior: 'smooth' });
+                  document.body.classList.add('work');
+                }, 300);
+              }
+
+              if (delta < 0 && targetX <= 10 && index > 0) {
+                setTimeout(() => {
+                  moveTop = window.pageYOffset + sections[index - 1].getBoundingClientRect().top;
+                  window.scrollTo({ top: moveTop, left: 0, behavior: 'smooth' });
+                  document.body.classList.remove('work');
+                }, 300);
+              }
               return;
             }
           }
@@ -50,7 +85,10 @@ function App() {
 
         section.addEventListener('wheel', handleWheel, { passive: false });
 
-        return () => section.removeEventListener('wheel', handleWheel);
+        return () => {
+          section.removeEventListener('wheel', handleWheel);
+          cancelAnimationFrame(animationFrame);
+        };
       });
     };
 

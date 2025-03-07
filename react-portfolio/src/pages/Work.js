@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Mousewheel } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
+
 
 const WorkWrapper = styled.section`
     min-height: 100vh;
@@ -21,7 +22,7 @@ const WorkCont = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 80%;
+        width: 75%;
         height: auto;
         padding: 40px 50px;
         border: 1px dashed #bbb;
@@ -35,7 +36,7 @@ const WorkCont = styled.div`
 `
 
 const Article = styled.article`
-    width: 30%;
+    width: 35%;
     @media screen and (max-width: 1350px) {
         width: 100%;
     }
@@ -132,9 +133,8 @@ const Btn = styled.div`
         transition: all 0.4s;
 
         &:hover {
-            background-color: #d3d3d3;
-            border-color: #d3d3d3;
-            color: #fff;
+            background-color: #f5f5f5;
+            border-color: #f5f5f5;
         }
     }
 `
@@ -226,12 +226,10 @@ const Work = () => {
         <div className="section" id="work">
             <WorkWrapper >
                 <Swiper
-                    direction={'horizontal'}
                     spaceBetween={50}
                     slidesPerView={1}
                     navigation={true}
-                    mousewheel={true}
-                    modules={[Navigation, Mousewheel]}
+                    modules={[Navigation]}
                     loop={false}
                 >
                     {projects.map((project, index) => (

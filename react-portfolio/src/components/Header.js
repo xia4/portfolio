@@ -13,12 +13,13 @@ const HeaderWrapper = styled.header`
     padding: 0 40px;
     box-sizing: border-box;
     transition: all 0.4s;
-    background: rgb(107 143 209 / 58%);
+    background: rgb(51 51 51 / 58%);
     border-radius: 1.8rem;
 
     @media (max-width: 768px) {
         height: 60px;
-        backdrop-filter:blur(10px);
+        backdrop-filter: blur(10px);
+
         .header_nav {
             display: ${props => (props.isNavOpen ? 'block' : 'none')};
             position: absolute;
@@ -26,7 +27,7 @@ const HeaderWrapper = styled.header`
             left: 0;
             width: 100%;
             background: transparent;
-            border-bottom: 2px solid rgb(107 143 209 / 58%);
+            border-bottom: 2px solid rgb(51 51 51 / 58%);
             transform: translateX(100%);
             transition: all 0.2s;
 
@@ -46,6 +47,7 @@ const HeaderWrapper = styled.header`
     }
 `;
 
+
 const HeaderInner = styled.div`
     width: 100%;
     margin: 0 auto;
@@ -53,18 +55,19 @@ const HeaderInner = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-`
-const H1 = styled.h1 `
+`;
+
+const H1 = styled.h1`
     font-size: 26px;
 
     @media screen and (max-width: 768px) {
         font-size: 20px;
     }
-    
+
     a {
-        color: #b4e3ff;
+        color: #fff;
     }
-`
+`;
 
 const Nav = styled.nav`
     height: 100%;
@@ -82,9 +85,9 @@ const Nav = styled.nav`
             position: relative;
             padding: 16px 20px;
             cursor: pointer;
-            
+
             a {
-                color: #b4e3ff;
+                color: #877f7f;
                 font-size: 20px;
                 font-weight: 600;
                 transition: all 0.6s;
@@ -96,15 +99,17 @@ const Nav = styled.nav`
             }
 
             &.on a {
-                color: #00a0ff;
+                color: #fff;
             }
         }
     }
-`
+`;
+
 const ToggleBtn = styled.button`
-    display:none;
+    display: none;
     background: transparent;
     border: 0;
+
     .nav_icon {
         width: 2rem;
         height: 1.4rem;
@@ -119,15 +124,16 @@ const ToggleBtn = styled.button`
             transition: all ease-in-out 0.3s;
             cursor: pointer;
 
-            &:nth-of-type(1) {top: 0;}
-            &:nth-of-type(2) {top: 45%;}
-            &:nth-of-type(3) {bottom: 0;}
+            &:nth-of-type(1) { top: 0; }
+            &:nth-of-type(2) { top: 45%; }
+            &:nth-of-type(3) { bottom: 0; }
         }
     }
+
     @media (max-width: 768px) {
-        display: block
+        display: block;
     }
-`
+`;
 
 function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -147,15 +153,15 @@ function Header() {
             });
         }
 
-        setActiveSection(id)
+        setActiveSection(id);
     };
 
     useEffect(() => {
-         const handleScroll = () => {
+        const handleScroll = () => {
             const sections = ['home', 'about', 'work', 'direction'];
             const scrollTop = window.scrollY;
             setIsTop(scrollTop > 0);
-            
+
             sections.forEach((sectionId) => {
                 const section = document.getElementById(sectionId);
                 if (section && scrollTop >= section.offsetTop - 50 && scrollTop < section.offsetTop + section.offsetHeight - 50) {
@@ -164,7 +170,6 @@ function Header() {
             });
         };
 
-        
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -173,14 +178,21 @@ function Header() {
         <HeaderWrapper isNavOpen={isNavOpen} className={isTop ? 'top' : ''}>
             <HeaderInner>
                 <H1>
-                    <a className="logo" href="#home"  data-scroll="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home')}}>HyunJun</a>
+                    <a
+                        className="logo"
+                        href="#home"
+                        data-scroll="#home"
+                        onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+                    >
+                        HyunJun
+                    </a>
                 </H1>
                 <ToggleBtn className="nav_toggle" onClick={toggleNav}>
                     <div className="nav_icon">
                         <span></span><span></span><span></span>
                     </div>
                 </ToggleBtn>
-               <Nav className={`header_nav ${isNavOpen ? 'open' : ''}`}>
+                <Nav className={`header_nav ${isNavOpen ? 'open' : ''}`}>
                     <ul className="list">
                         {['home', 'about', 'work', 'direction'].map((item) => (
                             <li key={item} className={activeSection === item ? 'on' : ''}>

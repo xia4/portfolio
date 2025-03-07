@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 
 html, body, div, span, applet, object, iframe,
@@ -29,9 +30,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-body {
-  line-height: 1;
-}
 ol, ul {
   list-style: none;
 }
@@ -48,24 +46,26 @@ table {
   border-spacing: 0;
 }
 
-.fp-watermark {
-    display: none !important;
-}
 body {
     height:100%;
     margin:0;
     border:0;
     padding:0;
     line-height: 1.5;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+body.work {
+  background-color: #393939;
+}
+@media screen and (max-width: 1024px) {
+  body {
+    overflow: auto;
   }
-  @media screen and (max-width: 1024px) {
-    body {
-      overflow: auto;
-    }
-  }
+}
 
   .App {
-    height: 100vh;
+    height: 100%;
   }
 .wrap {
     position:relative;

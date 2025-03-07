@@ -5,13 +5,31 @@ import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 
 const HomeSection = styled.section`
+    position: relative;
     background: url(${bannerImg});
     background-size: cover;
     background-position: center;
     height: 100vh;
     display: flex;
     align-items: center;
-`
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0 0 0 / 62%);
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+`;
+
 const TitleWrap = styled.div`
     max-width: 90%;
     width: 100%;
@@ -59,8 +77,8 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="section">
-            <HomeSection id='home'>
+        <div id='home' className="section">
+            <HomeSection>
                 {isLoaded && (
                     <TitleWrap>
                         <MainTitle data-aos='fade-up' data-aos-duration="1500" data-aos-delay="500" >
