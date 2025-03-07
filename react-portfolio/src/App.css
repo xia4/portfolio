@@ -52,7 +52,7 @@ body {
     border:0;
     padding:0;
     line-height: 1.5;
-    background-color: #fff;
+    background-color: #222;
     transition: background-color 0.3s;
 }
 body.work {

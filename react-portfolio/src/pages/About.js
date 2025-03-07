@@ -7,7 +7,6 @@ import { faGraduationCap, faBuilding } from '@fortawesome/free-solid-svg-icons'
 const AboutSection = styled.div`
     overflow: hidden;
     height: 100vh;
-    background-color: #222;
 `
 
 const AboutWrapper = styled.section`

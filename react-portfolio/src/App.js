@@ -37,6 +37,7 @@ function App() {
 
           if (section.id === 'about') {
             const aboutWrapper = section.querySelector('#about section');
+
             if (aboutWrapper) {
               const totalScrollWidth = aboutWrapper.scrollWidth - aboutWrapper.clientWidth;
 
@@ -59,7 +60,9 @@ function App() {
                 setTimeout(() => {
                   moveTop = window.pageYOffset + sections[index + 1].getBoundingClientRect().top;
                   window.scrollTo({ top: moveTop, left: 0, behavior: 'smooth' });
-                  document.body.classList.add('work');
+                  if (sections[index + 1].id === 'work') {
+                    document.body.classList.add('work');
+                  }
                 }, 300);
               }
 
@@ -76,8 +79,14 @@ function App() {
 
           if (delta > 0 && index < sectionCount - 1) {
             moveTop = window.pageYOffset + sections[index + 1].getBoundingClientRect().top;
+            if (sections[index + 1].id === 'work') {
+              document.body.classList.add('work');
+            }
           } else if (delta < 0 && index > 0) {
             moveTop = window.pageYOffset + sections[index - 1].getBoundingClientRect().top;
+            if (sections[index - 1].id !== 'work') {
+              document.body.classList.remove('work');
+            }
           }
 
           window.scrollTo({ top: moveTop, left: 0, behavior: 'smooth' });
@@ -88,6 +97,7 @@ function App() {
         return () => {
           section.removeEventListener('wheel', handleWheel);
           cancelAnimationFrame(animationFrame);
+          document.body.classList.remove('work');
         };
       });
     };

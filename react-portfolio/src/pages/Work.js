@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -108,36 +108,92 @@ const ImgBox = styled.figure`
     }
 `
 
-const Btn = styled.div`
-    max-width: 200px;
-    width: 100%;
-    margin-top: 20px;
-    @media screen and (max-width: 1350px) {
-        float: right;
-        margin-top: auto;
+const Btn = styled.a`
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  width: 12rem;
+  height: auto;
+
+  .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #eee;
+    border-radius: 1.625rem;
+  }
+
+  .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+  }
+
+  .arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: -0.3rem;
+      right: 0.0625rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-top: 0.125rem solid #919191;
+      border-right: 0.125rem solid #919191;
+      transform: rotate(45deg);
+    }
+  }
+
+  .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #eee;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    .circle {
+      width: 100%;
+
+      .arrow {
+        background: #919191;
+        transform: translate(1rem, 0);
+      }
     }
 
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 40px;
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #666;
-        border: 1px solid #bbb;
-        border-radius: 40px;
-        transition: all 0.4s;
-
-        &:hover {
-            background-color: #f5f5f5;
-            border-color: #f5f5f5;
-        }
+    .button-text {
+      color: #919191;
     }
-`
+  }
+`;
 
 const Work = () => {
     const projects = [
@@ -259,8 +315,11 @@ const Work = () => {
                                             </DescItem>
                                         </DescList>
                                         {project.link && (
-                                            <Btn>
-                                                <a href={project.link} target="_blank" className="view_btn">view</a>
+                                            <Btn href={project.link} target="_blank">
+                                                <span className="circle" aria-hidden="true">
+                                                    <span className="icon arrow"></span>
+                                                </span>
+                                                <span className="button-text">View</span>
                                             </Btn>
                                         )}
                                     </Article>
